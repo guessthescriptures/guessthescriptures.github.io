@@ -585,25 +585,9 @@ const allQuestions = [
 const defaultSettings = {
   availableQuestions: [
     "Which scriptures teach the following truth? " +
-    "Current events and attitudes indicate a change is near.",
-    "Which scriptures teach the following truth? " +
-    "A husband should 'love his wife as he does himself.'",
-    "Which scriptures teach the following truth? " +
-    "God has a name.",
-    "Which scriptures teach the following truth? " +
-    "God wants us to pray to him.",
-    "Which scriptures teach the following truth? " +
-    "Jesus was a great teacher whose advice always works.",
-    "Which scriptures teach the following truth? " +
-    "God's Kingdom is a real government in heaven.",
-    "Which scriptures teach the following truth? " +
-    "God does not cause our suffering.",
-    "Which scriptures teach the following truth? " +
-    "The dead are unconscious; they are not suffering.",
-    "Which scriptures teach the following truth? " +
-    "Not all religions please God."
+    "Current events and attitudes indicate a change is near."
   ],
-  numQuestionsPerGame: 9
+  numQuestionsPerGame: 1
 };
 
 const settingsLocalStorageItemKey = "guessthescriptures.en.settings";
@@ -648,4 +632,5 @@ const gameResponse03fHtml = "<br/>You answered all the questions correctly!" +
 const gameResponse03f01Html = "<br/><b>Goal:</b> Answer all the questions correctly " +
                       "without ever viewing the full text on any of the scriptures " +
                       "before answering any of the questions.";
-const gameResponse03f02Html = "<br/><b>Goal:</b> Add another question to be used in the next game.";
+const gameResponse03f02Html = "<br/><b>Goal:</b> Add another question to be used in the next game. " +
+                      "(See <b>Settings</b>)";
