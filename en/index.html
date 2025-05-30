@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Guess the Scriptures</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+</head>
+<body>
+<noscript style="color=red">
+    JavaScript is required.
+    You will need to enable JavaScript for this page,
+    or you will need to use another browser that supports JavaScript.
+</noscript>
+
+<div id="main-menu" class="position-center element">
+    <h1>Guess the Scriptures</h1>
+    <div id="menu-item-new-game" class="margin-5px text-align-center">
+        <a href="#">New Game</a>
+    </div>
+    <div id="menu-item-review" class="margin-5px text-align-center">
+        <a href="#">Review</a>
+    </div>
+    <div id="menu-item-settings" class="margin-5px text-align-center">
+        <a href="#">Settings</a>
+    </div>
+    <div id="menu-item-how-to-play" class="margin-5px text-align-center">
+        <a href="#">How to Play</a>
+    </div>
+    <div id="menu-item-about" class="margin-5px text-align-center">
+        <a href="#">About</a>
+    </div>
+</div>
+
+<div id="new-game" class="display-none disabled">
+    <h1>Guess the Scriptures</h1>
+    <div id="score" class="margin-5px text-align-center"></div>
+    <div id="game-question-number" class="margin-5px text-align-center"></div>
+    <div id="game-question" class="margin-5px text-align-center"></div>
+    <div id="game-scripture-refs" class="margin-5px scripture-refs"></div>
+    <div class="margin-5px element">
+        <button id="submit">Submit Selected Scriptures</button>
+        <button id="next-game-question">Next Question</button>
+        <button id="restart">Restart Game</button>
+    </div>
+    <div id="new-game-hide" class="margin-5px text-align-center">
+        <a href="#">Return to Main Menu</a>
+    </div>
+</div>
+
+<div id="game-scripture-dialog" class="position-center display-none disabled">
+    <div class="dialog-title-bar">
+        <div class="dialog-title"></div>
+        <div id="game-scripture-dialog-hide" class="dialog-hide">&#10005;</div>
+    </div>
+    <div class="dialog-content text-align-left"></div>
+</div>
+
+<div id="game-response-dialog" class="position-center display-none disabled">
+    <div class="dialog-title-bar">
+        <div class="dialog-title">Results</div>
+        <div id="game-response-dialog-hide" class="dialog-hide">&#10005;</div>
+    </div>
+    <div class="dialog-content text-align-center"></div>
+</div>
+
+<div id="review" class="display-none disabled">
+    <h1>Review</h1>
+    <label class="margin-5px" for="review-question">Question</label>
+    <select id="review-question" class="margin-5px"></select>
+    <div id="review-question-text" class="margin-5px text-align-center"></div>
+    <div id="review-scripture-refs" class="margin-5px scripture-refs"></div>
+    <div class="margin-5px element">
+        <button id="previous-review-question">Previous Question</button>
+        <button id="next-review-question">Next Question</button>
+    </div>
+    <div id="review-hide" class="margin-5px text-align-center">
+        <a href="#">Return to Main Menu</a>
+    </div>
+</div>
+
+<div id="review-scripture-dialog" class="position-center display-none disabled">
+    <div class="dialog-title-bar">
+        <div class="dialog-title"></div>
+        <div id="review-scripture-dialog-hide" class="dialog-hide">&#10005;</div>
+    </div>
+    <div class="dialog-content text-align-left"></div>
+</div>
+
+<div id="settings" class="display-none disabled">
+    <h1>Settings</h1>
+    <label class="margin-5px" for="available-questions">Available Questions</label>
+    <div id="available-questions" class="margin-5px available-questions"></div>
+    <span>(More questions coming soon.)</span>
+    <label class="margin-5px" for="num-questions-per-game">Number of Questions Per Game</label>
+    <select id="num-questions-per-game" class="margin-5px"></select>
+    <div class="margin-5px settings-buttons">
+        <div class="text-align-center">
+            <button id="apply-current-settings">Apply Current Settings</button>
+        </div>
+        <div class="margin-5px text-align-left">
+            Applies the current settings to take effect in this window or tab.
+            The applied current settings will remain in effect until this
+            window or tab is refreshed or closed. To have the applied current
+            settings persist after this window or tab is refreshed or closed,
+            you will need to save the current settings to local storage.
+        </div>
+        <div class="text-align-center">
+            <button id="save-current-settings">Save Current Settings</button>
+        </div>
+        <div class="margin-5px text-align-left">
+            Saves the current settings to local storage. The saved current
+            settings will take effect in a new or refreshed window or tab.
+        </div>
+        <div class="text-align-center">
+            <button id="delete-saved-settings">Delete Saved Settings</button>
+        </div>
+        <div class="margin-5px text-align-left">
+            Deletes any saved settings in local storage. If the current
+            settings are not saved to local storage, then under a new or
+            refreshed window or tab, the default settings are used.
+        </div>
+        <div class="text-align-center">
+            <button id="reset-to-default-settings">Reset to Default Settings</button>
+        </div>
+        <div class="margin-5px text-align-left">
+            Resets the current settings to the default settings. You will need
+            to apply and/or save the current settings in order for the default
+            settings to take effect.
+        </div>
+    </div>
+    <div id="settings-hide" class="margin-5px text-align-center">
+        <a href="#">Return to Main Menu</a>
+    </div>
+</div>
+
+<div id="how-to-play" class="display-none disabled">
+    <h1>How to Play</h1>
+    <div class="text-align-left">
+        <h2>Introduction</h2>
+        <p>
+            <i>Guess the Scriptures</i> is a game in the style of a trivia
+            game with the goal of strengthening one's memory of the Scriptures
+            that teach certain truths.
+        </p>
+        <h2>How to Play <i>Guess the Scriptures</i></h2>
+        <p>
+            To play <i>Guess the Scriptures</i>, select <b>New Game</b> from
+            the main menu.
+        </p>
+        <p>
+            The game consists of a number of randomly selected questions. (By
+            default, it is 9, but the available questions and the number of
+            questions per game can be adjusted in <b>Settings</b>.) The game
+            presents one question at a time. Each question must be answered
+            before the game can present the next question. The questions are
+            based from Appendix A <i>Truths We Love to Teach</i> from the
+            brochure <i>Love People&mdash;Make Disciples</i> published by
+            Jehovah's Witnesses.
+        </p>
+        <p>
+            Below the presented question is a 4 x 2 grid (or 2 x 4 grid for
+            smaller devices) of at most 8 boxes each with an unchecked
+            checkbox and a scripture associated with it. Checking a checkbox
+            is a selection of the associated scripture. Check the checkboxes
+            that answer the presented question.
+        </p>
+        <p>
+            You can select the text of the scripture to read the full text
+            in a pop-up dialog box before or after the question is answered.
+            The full texts of the scriptures are from the modern-language
+            <i>New World Translation of the Holy Scriptures</i>. To close the
+            pop-up dialog box, select the close button in the upper right
+            corner of the pop-up dialog box.
+        </p>
+        <p>
+            After selecting the scriptures that answer the presented question,
+            to submit the selected scriptures, select the button labeled
+            <b>Submit Selected Scriptures</b>. A pop-up dialog box will
+            display the results. To close the pop-up dialog box, select the
+            close button in the upper right corner of the pop-up dialog box.
+            The boxes that each contain the correct scripture are highlighted
+            in green. A point is given to your score if you selected only and
+            all the correct scriptures for the presented question.
+        </p>
+        <p>
+            To proceed to the next question, select the button labeled
+            <b>Next Question</b>.
+        </p>
+        <p>
+            To restart the game at any time, select the button labeled
+            <b>Restart Game</b>.
+        </p>
+        <p>
+            To quit the game and return to the main menu, select the link
+            labeled <b>Return to Main Menu</b>.
+        </p>
+        <p>
+            The goal of the game is to answer all the questions correctly.
+        </p>
+        <h2>Review the Questions and Their Correct Scriptures</h2>
+        <p>
+            Before or after playing a game, you can review the questions that
+            may be presented in the game along with their correct scriptures.
+        </p>
+        <p>
+            To review the questions and their correct scriptures, select
+            <b>Review</b> from the main menu.
+        </p>
+        <p>
+            One question is presented at a time.
+        </p>
+        <p>
+            To select a question to be presented, use the selection box
+            labeled <b>Question</b> and select the question you want to have
+            presented.
+        </p>
+        <p>
+            Below the presented question is a 4 x 2 grid (or 2 x 4 grid for
+            smaller devices) of at most 4 boxes highlighted in green each with
+            a scripture.
+        </p>
+        <p>
+            You can select the text of the scripture to read the full text
+            in a pop-up dialog box. To close the pop-up dialog box, select the
+            close button in the upper right corner of the pop-up dialog box.
+        </p>
+        <p>
+            To present the previous question and its correct scriptures,
+            select the button labeled <b>Previous Question</b>.
+        </p>
+        <p>
+            To present the next question and its correct scriptures, select
+            the button labeled <b>Next Question</b>.
+        </p>
+        <p>
+            To return to the main menu, select the link labeled
+            <b>Return to Main Menu</b>.
+        </p>
+        <h2>Adjusting the Settings</h2>
+        <p>
+            You can adjust the settings for the game such as which questions
+            can be available for the game and for review and how many
+            questions per game.
+        </p>
+        <p>
+            To adjust the settings for the game, select <b>Settings</b> from
+            the main menu.
+        </p>
+        <h3>Settings</h3>
+        <p>
+            The following discusses each setting.
+        </p>
+        <h4>Available Questions</h4>
+        <p>
+            A column of boxes is presented each with a checkbox and a question
+            associated with it. A checked checkbox indicates the associated
+            question is available for the game and for review. An unchecked
+            checkbox indicates otherwise. You can check which question to be
+            available. However, at least one checkbox can remain checked.
+        </p>
+        <h4>Number of Questions Per Game</h4>
+        <p>
+            A selection box is presented with options each containing a number
+            of the questions from the available questions to be selected for the
+            game and for review. The number of options increase or decrease
+            based on the number of available questions. You can select how
+            many questions from the available questions to be selected for the
+            game and for review.
+        </p>
+        <h3>Buttons</h3>
+        <p>
+            The following discusses each button.
+        </p>
+        <h4>Apply Current Settings</h4>
+        <p>
+            To apply the current settings to take effect in this window or
+            tab, select the button labeled <b>Apply Current Settings</b>.
+            The applied current settings will remain in effect until this
+            window or tab is refreshed or closed. To have the applied current
+            settings persist after this window or tab is refreshed or closed,
+            you will need to save the current settings to local storage.
+        </p>
+        <h4>Save Current Settings</h4>
+        <p>
+            To save the current settings to local storage, select the button
+            labeled <b>Save Current Settings</b>. The saved current settings
+            will take effect in a new or refreshed window or tab.
+        </p>
+        <h4>Delete Saved Settings</h4>
+        <p>
+            To delete any saved settings in local storage, select the button
+            labeled <b>Delete Saved Settings</b>. If the current settings are
+            not saved to local storage, then under a new or refreshed window
+            or tab, the default settings are used.
+        </p>
+        <h4>Reset to Default Settings</h4>
+        <p>
+            To reset the current settings to the default settings, select the
+            button labeled <b>Reset to Default Settings</b>. You will need to
+            apply and/or save the current settings in order for the default
+            settings to take effect.
+        </p>
+        <p>
+            To return to the main menu, select the link labeled
+            <b>Return to Main Menu</b>.
+        </p>
+    </div>
+    <div id="how-to-play-hide" class="margin-5px text-align-center">
+        <a href="#">Return to Main Menu</a>
+    </div>
+</div>
+
+<div id="about" class="position-center display-none disabled">
+    <h1>About</h1>
+    <span><i>Guess the Scriptures</i> v1.0.0</span>
+    <span>Copyright &#169; 2025 <a href="https://github.com/guessthescriptures">guessthescriptures</a></span>
+    <div id="about-hide" class="margin-5px text-align-center">
+        <a href="#">Return to Main Menu</a>
+    </div>
+</div>
+
+<script type="text/javascript" src="./constants.js"></script>
+<script type="text/javascript" src="../assets/js/controller.js"></script>
+
+</body>
+</html>
