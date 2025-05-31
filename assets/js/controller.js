@@ -436,6 +436,7 @@ function toggleAvailableQuestionCheckbox(availableQuestionCheckbox) {
   } else {
     editableSettings.availableQuestions.push(availableQuestion);
   }
+  editableSettings.numQuestionsPerGame = editableSettings.availableQuestions.length;
   updateSettingsElement();
 }
 
@@ -479,9 +480,6 @@ function updateSettingsElement() {
       option.setAttribute("value", value);
       numQuestionsPerGameSelect.appendChild(option);
     }
-  }
-  if (editableSettings.numQuestionsPerGame > numQuestionsPerGameSelect.options.length) {
-    editableSettings.numQuestionsPerGame = numQuestionsPerGameSelect.options.length;
   }
   numQuestionsPerGameSelect.value = editableSettings.numQuestionsPerGame.toString();
 }
