@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+    const allRedirects = [
+      {
+        language: "en",
+        redirect: "./en/"
+      }
+    ];
+    const defaultRedirect = "./en/";
+    const locale = new Intl.Locale(navigator.language);
+    const redirects = allRedirects.filter(r => locale.language === r.language);
+    const redirect = (redirects.length > 0) ? redirects[0].redirect : defaultRedirect;
+    location.replace(redirect);
+</script>
+</body>
+</html>

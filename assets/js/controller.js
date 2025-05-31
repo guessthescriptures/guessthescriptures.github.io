@@ -1,4 +1,5 @@
 const mainMenuElement = document.getElementById("main-menu");
+const languageSelect = document.getElementById("language");
 const menuItemNewGameElement = document.getElementById("menu-item-new-game");
 const menuItemReviewElement = document.getElementById("menu-item-review");
 const menuItemSettingsElement = document.getElementById("menu-item-settings");
@@ -310,6 +311,10 @@ function saveEditableSettings() {
   localStorage.setItem(settingsLocalStorageItemKey, JSON.stringify(editableSettings));
 }
 
+function selectLanguage(languageSelect) {
+  location.replace("../" + languageSelect.value);
+}
+
 function selectReviewQuestion(reviewQuestionSelect) {
   currentReviewQuestionIndex = parseInt(reviewQuestionSelect.value);
   loadReviewQuestion();
@@ -480,6 +485,8 @@ function updateSettingsDialog() {
   }
   numQuestionsPerGameSelect.value = editableSettings.numQuestionsPerGame.toString();
 }
+
+languageSelect.addEventListener("change", () => selectLanguage(languageSelect));
 
 menuItemNewGameElement.children[0].addEventListener("click", () =>
   displayNewGameElement(mainMenuElement, newGameElement)
