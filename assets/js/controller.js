@@ -1,3 +1,5 @@
+const version = "v1.1.2";
+
 const mainMenuElement = document.getElementById("main-menu");
 const languageSelect = document.getElementById("language");
 const menuItemNewGameElement = document.getElementById("menu-item-new-game");
@@ -47,6 +49,7 @@ const howToPlayHideElement = document.getElementById("how-to-play-hide");
 
 const aboutElement = document.getElementById("about");
 const aboutHideElement = document.getElementById("about-hide");
+const versionElement = document.getElementById("version");
 
 let settings = null;
 let editableSettings = null;
@@ -570,6 +573,8 @@ howToPlayHideElement.children[0].addEventListener("click", () =>
 aboutHideElement.children[0].addEventListener("click", () =>
   displayElement(aboutElement, mainMenuElement)
 );
+
+versionElement.textContent = version;
 
 settings = getSettings();
 editableSettings = JSON.parse(JSON.stringify(settings));
