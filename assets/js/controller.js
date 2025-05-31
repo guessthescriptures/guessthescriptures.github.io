@@ -279,11 +279,6 @@ function nextReviewQuestion() {
   loadReviewQuestion();
 }
 
-function numQuestionsPerGameSelected() {
-  editableSettings.numQuestionsPerGame = parseInt(numQuestionsPerGameSelect.value);
-  updateSettingsDialog();
-}
-
 function previousReviewQuestion() {
   currentReviewQuestionIndex--;
   loadReviewQuestion();
@@ -304,7 +299,7 @@ function removeChildrenFromElement(element) {
 
 function resetToDefaultSettings() {
   editableSettings = JSON.parse(JSON.stringify(defaultSettings));
-  updateSettingsDialog();
+  updateSettingsElement();
 }
 
 function saveEditableSettings() {
@@ -313,6 +308,11 @@ function saveEditableSettings() {
 
 function selectLanguage(languageSelect) {
   location.replace("../" + languageSelect.value);
+}
+
+function selectNumQuestionsPerGame(numQuestionsPerGameSelect) {
+  editableSettings.numQuestionsPerGame = parseInt(numQuestionsPerGameSelect.value);
+  updateSettingsElement();
 }
 
 function selectReviewQuestion(reviewQuestionSelect) {
@@ -436,7 +436,7 @@ function toggleAvailableQuestionCheckbox(availableQuestionCheckbox) {
   } else {
     editableSettings.availableQuestions.push(availableQuestion);
   }
-  updateSettingsDialog();
+  updateSettingsElement();
 }
 
 function toggleGameScriptureRefCheckbox(gameScriptureRefCheckbox) {
@@ -452,7 +452,7 @@ function updateScoreElement() {
   scoreElement.textContent = interpolate(scoreText, [score.toString()]);
 }
 
-function updateSettingsDialog() {
+function updateSettingsElement() {
   const availableQuestionCheckboxes = document.querySelectorAll(".available-question-checkbox");
   availableQuestionCheckboxes.forEach((availableQuestionCheckbox) => {
     availableQuestionCheckbox.checked = editableSettings.availableQuestions.includes(availableQuestionCheckbox.value);
@@ -553,7 +553,9 @@ allQuestions.forEach((question) => {
   availableQuestionsElement.appendChild(availableQuestionContainer);
 });
 
-numQuestionsPerGameSelect.addEventListener("change", () => numQuestionsPerGameSelected());
+numQuestionsPerGameSelect.addEventListener("change", () => 
+  selectNumQuestionsPerGame(numQuestionsPerGameSelect)
+);
 
 applyCurrentSettingsButton.addEventListener("click", () => applyEditableSettings());
 
@@ -573,4 +575,4 @@ aboutHideElement.children[0].addEventListener("click", () =>
 
 settings = getSettings();
 editableSettings = JSON.parse(JSON.stringify(settings));
-updateSettingsDialog();
+updateSettingsElement();
