@@ -307,7 +307,7 @@ function saveEditableSettings() {
 }
 
 function selectLanguage(languageSelect) {
-  location.replace("../" + languageSelect.value);
+  location.replace(languageSelect.value);
 }
 
 function selectNumQuestionsPerGame(numQuestionsPerGameSelect) {
