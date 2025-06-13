@@ -1,42 +1,27 @@
-const version = "v1.1.2";
+const version = "v1.2.0";
 
 const mainMenuElement = document.getElementById("main-menu");
 const languageSelect = document.getElementById("language");
-const menuItemNewGameElement = document.getElementById("menu-item-new-game");
-const menuItemReviewElement = document.getElementById("menu-item-review");
-const menuItemSettingsElement = document.getElementById("menu-item-settings");
-const menuItemHowToPlayElement = document.getElementById("menu-item-how-to-play");
-const menuItemAboutElement = document.getElementById("menu-item-about");
 
 const newGameElement = document.getElementById("new-game");
-const newGameHideElement = document.getElementById("new-game-hide");
 const scoreElement = document.getElementById("score");
 const gameQuestionNumberElement = document.getElementById("game-question-number");
 const gameQuestionElement = document.getElementById("game-question");
 const gameScriptureRefsElement = document.getElementById("game-scripture-refs");
+const gameResponseDialog = document.getElementById("game-response-dialog");
+const gameResponseDialogHideElement = document.getElementById("game-response-dialog-hide");
 const submitButton = document.getElementById("submit");
 const nextGameQuestionButton = document.getElementById("next-game-question");
 const restartButton = document.getElementById("restart");
 
-const gameScriptureDialog = document.getElementById("game-scripture-dialog");
-const gameScriptureDialogHideElement = document.getElementById("game-scripture-dialog-hide");
-
-const gameResponseDialog = document.getElementById("game-response-dialog");
-const gameResponseDialogHideElement = document.getElementById("game-response-dialog-hide");
-
 const reviewElement = document.getElementById("review");
-const reviewHideElement = document.getElementById("review-hide");
 const reviewQuestionSelect = document.getElementById("review-question");
 const reviewQuestionTextElement = document.getElementById("review-question-text");
 const reviewScriptureRefsElement = document.getElementById("review-scripture-refs");
 const previousReviewQuestionButton = document.getElementById("previous-review-question");
 const nextReviewQuestionButton = document.getElementById("next-review-question");
 
-const reviewScriptureDialog = document.getElementById("review-scripture-dialog");
-const reviewScriptureDialogHideElement = document.getElementById("review-scripture-dialog-hide");
-
 const settingsElement = document.getElementById("settings");
-const settingsHideElement = document.getElementById("settings-hide");
 const availableQuestionsElement = document.getElementById("available-questions");
 const numQuestionsPerGameSelect = document.getElementById("num-questions-per-game");
 const applyCurrentSettingsButton = document.getElementById("apply-current-settings");
@@ -45,10 +30,8 @@ const deleteSavedSettingsButton = document.getElementById("delete-saved-settings
 const resetToDefaultSettingsButton = document.getElementById("reset-to-default-settings");
 
 const howToPlayElement = document.getElementById("how-to-play");
-const howToPlayHideElement = document.getElementById("how-to-play-hide");
 
 const aboutElement = document.getElementById("about");
-const aboutHideElement = document.getElementById("about-hide");
 const versionElement = document.getElementById("version");
 
 let settings = null;
@@ -60,54 +43,45 @@ let score = 0;
 let currentGameQuestionIndex = 0;
 let selectedGameScriptureRefs = [];
 let selectedGameScriptureRefsSubmitted = false;
-let gameScriptureDialogDisplayedBeforeSubmission = false;
+let gameScriptureRefClickedBeforeSubmission = false;
 
 function applyEditableSettings() {
   settings = JSON.parse(JSON.stringify(editableSettings));
 }
 
-function displayDialog(source, dialog, title, content) {
-  source.classList.add("disabled");
-  if (title !== null) {
-    dialog.children[0].children[0].textContent = title;
-  }
-  if (content !== null) {
-    dialog.children[1].innerHTML = content;
-  }
+function displayDialog(dialog, content) {
+  dialog.children[1].innerHTML = content;
   dialog.classList.remove("display-none");
   dialog.classList.remove("disabled");
   dialog.classList.add("dialog");
 }
 
-function displayElement(source, element) {
-  source.classList.remove("element");
-  source.classList.add("display-none");
-  source.classList.add("disabled");
-
+function displayElement(element) {
   element.classList.add("element");
   element.classList.remove("display-none");
-  element.classList.remove("disabled");
+  element.classList.remove("disabled");  
 }
 
-function displayGameScriptureDialog(source, gameScriptureDialog, scripture) {
-  displayDialog(source, gameScriptureDialog, scripture.ref, scripture.html);
-  if (!selectedGameScriptureRefsSubmitted) {
-    gameScriptureDialogDisplayedBeforeSubmission = true;
-  }
-}
-
-function displayNewGameElement(source, newGameElement) {
+function displayNewGameElement() {
   newGame();
-  displayElement(source, newGameElement);
+  displayElement(newGameElement);
 }
 
-function displayReviewElement(source, reviewElement) {
+function displayReviewElement() {
   review();
-  displayElement(source, reviewElement);
+  displayElement(reviewElement);
 }
 
 function deleteSavedSettings() {
   localStorage.removeItem(settingsLocalStorageItemKey);
+}
+
+function disableElement(element) {
+  element.classList.add("disabled");
+}
+
+function enableElement(element) {
+  element.classList.remove("disabled");
 }
 
 function getAvailableQuestions() {
@@ -136,8 +110,14 @@ function getSettings() {
   return JSON.parse(JSON.stringify(defaultSettings));
 }
 
-function hideDialog(source, dialog) {
-  source.classList.remove("disabled");
+function hideElement(element) {
+  element.classList.remove("element");
+  element.classList.add("display-none");
+  element.classList.add("disabled");  
+}
+
+function hideDialog(dialog) {
+  removeChildrenFromElement(dialog.children[1]);
   dialog.classList.remove("dialog");
   dialog.classList.add("display-none");
   dialog.classList.add("disabled");
@@ -202,11 +182,13 @@ function loadGameQuestion() {
     gameScriptureRefElement.classList.add("game-scripture-ref");
 
     const aElement = document.createElement("a");
-    aElement.href = "#";
+    aElement.href = scripture.href;
     aElement.textContent = scripture.ref;
-    aElement.addEventListener("click", () =>
-      displayGameScriptureDialog(newGameElement, gameScriptureDialog, scripture)
-    );
+    aElement.addEventListener("click", () => {
+      if (!selectedGameScriptureRefsSubmitted) {
+        gameScriptureRefClickedBeforeSubmission = true;
+      }
+    });
     gameScriptureRefElement.appendChild(aElement);
 
     gameScriptureContainerElementElement.appendChild(gameScriptureRefCheckbox);
@@ -245,11 +227,8 @@ function loadReviewQuestion() {
 
       const aElement = document.createElement("a");
       aElement.classList.add("correct");
-      aElement.href = "#";
+      aElement.href = scripture.href;
       aElement.textContent = scripture.ref;
-      aElement.addEventListener("click", () =>
-        displayDialog(reviewElement, reviewScriptureDialog, scripture.ref, scripture.html)
-      );
       reviewScriptureRefElement.appendChild(aElement);
 
       reviewScriptureRefsElement.appendChild(reviewScriptureRefElement);
@@ -260,13 +239,65 @@ function loadReviewQuestion() {
   nextReviewQuestionButton.disabled = currentReviewQuestionIndex === reviewQuestions.length - 1;
 }
 
+function locationHashChanged() {
+  if (location.hash === "#main-menu") {
+    displayElement(mainMenuElement);
+    hideElement(newGameElement);
+    hideDialog(gameResponseDialog);
+    hideElement(reviewElement);
+    hideElement(settingsElement);
+    hideElement(howToPlayElement);
+    hideElement(aboutElement);
+  } else if (location.hash === "#new-game") {
+    hideElement(mainMenuElement);
+    displayNewGameElement();
+    hideDialog(gameResponseDialog);
+    hideElement(reviewElement);
+    hideElement(settingsElement);
+    hideElement(howToPlayElement);
+    hideElement(aboutElement);  
+  } else if (location.hash === "#review") {
+    hideElement(mainMenuElement);
+    hideElement(newGameElement);
+    hideDialog(gameResponseDialog);
+    displayReviewElement();
+    hideElement(settingsElement);
+    hideElement(howToPlayElement);
+    hideElement(aboutElement);  
+  } else if (location.hash === "#settings") {
+    hideElement(mainMenuElement);
+    hideElement(newGameElement);
+    hideDialog(gameResponseDialog);
+    hideElement(reviewElement);
+    displayElement(settingsElement);
+    hideElement(howToPlayElement);
+    hideElement(aboutElement);    
+  } else if (location.hash === "#how-to-play") {
+    hideElement(mainMenuElement);
+    hideElement(newGameElement);
+    hideDialog(gameResponseDialog);
+    hideElement(reviewElement);
+    hideElement(settingsElement);
+    displayElement(howToPlayElement);
+    hideElement(aboutElement);      
+  } else if (location.hash === "#about") {
+    hideElement(mainMenuElement);
+    hideElement(newGameElement);
+    hideDialog(gameResponseDialog);
+    hideElement(reviewElement);
+    hideElement(settingsElement);
+    hideElement(howToPlayElement);
+    displayElement(aboutElement);        
+  }
+}
+
 function newGame() {
   gameQuestions = getGameQuestions(); // Select new questions
   score = 0;
   currentGameQuestionIndex = 0;
   selectedGameScriptureRefs = [];
   selectedGameScriptureRefsSubmitted = false;
-  gameScriptureDialogDisplayedBeforeSubmission = false;
+  gameScriptureRefClickedBeforeSubmission = false;
   updateScoreElement();
   loadGameQuestion();
 }
@@ -413,7 +444,7 @@ function submitSelectedGameScriptureRefs() {
       ]);
     } else if (score === gameQuestions.length) {
       gameResponse += gameResponse03fHtml;
-      if (gameScriptureDialogDisplayedBeforeSubmission) {
+      if (gameScriptureRefClickedBeforeSubmission) {
         gameResponse += gameResponse03f01Html;
       } else if (gameQuestions.length < allQuestions.length) {
         gameResponse += gameResponse03f02Html;
@@ -429,7 +460,8 @@ function submitSelectedGameScriptureRefs() {
     nextGameQuestionButton.disabled = false; // Enable the next button
   }
 
-  displayDialog(newGameElement, gameResponseDialog, null, gameResponse);
+  displayDialog(gameResponseDialog, gameResponse);
+  disableElement(newGameElement);
 }
 
 function toggleAvailableQuestionCheckbox(availableQuestionCheckbox) {
@@ -489,49 +521,20 @@ function updateSettingsElement() {
 
 languageSelect.addEventListener("change", () => selectLanguage(languageSelect));
 
-menuItemNewGameElement.children[0].addEventListener("click", () =>
-  displayNewGameElement(mainMenuElement, newGameElement)
-);
-menuItemReviewElement.children[0].addEventListener("click", () =>
-  displayReviewElement(mainMenuElement, reviewElement)
-);
-menuItemSettingsElement.children[0].addEventListener("click", () =>
-  displayElement(mainMenuElement, settingsElement)
-);
-menuItemHowToPlayElement.children[0].addEventListener("click", () =>
-  displayElement(mainMenuElement, howToPlayElement)
-);
-menuItemAboutElement.children[0].addEventListener("click", () =>
-  displayElement(mainMenuElement, aboutElement)
-);
-
-newGameHideElement.children[0].addEventListener("click", () =>
-  displayElement(newGameElement, mainMenuElement)
-);
+gameResponseDialogHideElement.addEventListener("click", () => {
+  hideDialog(gameResponseDialog);
+  enableElement(newGameElement);
+});
 
 submitButton.addEventListener("click", () => submitSelectedGameScriptureRefs());
 nextGameQuestionButton.addEventListener("click", () => nextGameQuestion());
 restartButton.addEventListener("click", () => newGame());
-
-gameScriptureDialogHideElement.addEventListener("click", () => hideDialog(newGameElement, gameScriptureDialog));
-
-gameResponseDialogHideElement.addEventListener("click", () => hideDialog(newGameElement, gameResponseDialog));
-
-reviewHideElement.children[0].addEventListener("click", () =>
-  displayElement(reviewElement, mainMenuElement)
-);
 
 reviewQuestionSelect.addEventListener("change", () => selectReviewQuestion(reviewQuestionSelect));
 
 previousReviewQuestionButton.addEventListener("click", () => previousReviewQuestion());
 
 nextReviewQuestionButton.addEventListener("click", () => nextReviewQuestion());
-
-reviewScriptureDialogHideElement.addEventListener("click", () => hideDialog(reviewElement, reviewScriptureDialog));
-
-settingsHideElement.children[0].addEventListener("click", () =>
-  displayElement(settingsElement, mainMenuElement)
-);
 
 allQuestions.forEach((question) => {
   const availableQuestionCheckbox = document.createElement("input");
@@ -566,16 +569,14 @@ deleteSavedSettingsButton.addEventListener("click", () => deleteSavedSettings())
 
 resetToDefaultSettingsButton.addEventListener("click", () => resetToDefaultSettings());
 
-howToPlayHideElement.children[0].addEventListener("click", () =>
-  displayElement(howToPlayElement, mainMenuElement)
-);
-
-aboutHideElement.children[0].addEventListener("click", () =>
-  displayElement(aboutElement, mainMenuElement)
-);
-
 versionElement.textContent = version;
 
 settings = getSettings();
 editableSettings = JSON.parse(JSON.stringify(settings));
 updateSettingsElement();
+
+location.replace("./#main-menu");
+
+locationHashChanged();
+
+window.onhashchange = locationHashChanged;

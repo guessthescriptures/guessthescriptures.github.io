@@ -12,27 +12,17 @@
     or you will need to use another browser that supports JavaScript.
 </noscript>
 
-<div id="main-menu" class="position-center element">
+<div id="main-menu" class="position-center display-none disabled">
     <h1>Guess the Scriptures</h1>
     <label class="margin-5px" for="language">Language</label>
     <select id="language" class="margin-5px">
         <option value="../en/" selected>English &dash; English</option>
     </select>
-    <div id="menu-item-new-game" class="margin-5px text-align-center">
-        <a href="#">New Game</a>
-    </div>
-    <div id="menu-item-review" class="margin-5px text-align-center">
-        <a href="#">Review</a>
-    </div>
-    <div id="menu-item-settings" class="margin-5px text-align-center">
-        <a href="#">Settings</a>
-    </div>
-    <div id="menu-item-how-to-play" class="margin-5px text-align-center">
-        <a href="#">How to Play</a>
-    </div>
-    <div id="menu-item-about" class="margin-5px text-align-center">
-        <a href="#">About</a>
-    </div>
+    <a href="#new-game" class="margin-5px text-align-center">New Game</a>
+    <a href="#review" class="margin-5px text-align-center">Review</a>
+    <a href="#settings" class="margin-5px text-align-center">Settings</a>
+    <a href="#how-to-play" class="margin-5px text-align-center">How to Play</a>
+    <a href="#about" class="margin-5px text-align-center">About</a>
 </div>
 
 <div id="new-game" class="display-none disabled">
@@ -46,23 +36,13 @@
         <button id="next-game-question">Next Question</button>
         <button id="restart">Restart Game</button>
     </div>
-    <div id="new-game-hide" class="margin-5px text-align-center">
-        <a href="#">Return to Main Menu</a>
-    </div>
-</div>
-
-<div id="game-scripture-dialog" class="position-center display-none disabled">
-    <div class="dialog-title-bar">
-        <div class="dialog-title"></div>
-        <div id="game-scripture-dialog-hide" class="dialog-hide">&#10005;</div>
-    </div>
-    <div class="dialog-content text-align-left"></div>
+    <a href="#main-menu" class="margin-5px text-align-center">Return to Main Menu</a>
 </div>
 
 <div id="game-response-dialog" class="position-center display-none disabled">
     <div class="dialog-title-bar">
-        <div class="dialog-title">Results</div>
-        <div id="game-response-dialog-hide" class="dialog-hide">&#10005;</div>
+        <div class="dialog-title"><b>Results</b></div>
+        <div id="game-response-dialog-hide" class="dialog-hide"><b>&#10005;</b></div>
     </div>
     <div class="dialog-content text-align-center"></div>
 </div>
@@ -77,24 +57,14 @@
         <button id="previous-review-question">Previous Question</button>
         <button id="next-review-question">Next Question</button>
     </div>
-    <div id="review-hide" class="margin-5px text-align-center">
-        <a href="#">Return to Main Menu</a>
-    </div>
-</div>
-
-<div id="review-scripture-dialog" class="position-center display-none disabled">
-    <div class="dialog-title-bar">
-        <div class="dialog-title"></div>
-        <div id="review-scripture-dialog-hide" class="dialog-hide">&#10005;</div>
-    </div>
-    <div class="dialog-content text-align-left"></div>
+    <a href="#main-menu" class="margin-5px text-align-center">Return to Main Menu</a>
 </div>
 
 <div id="settings" class="display-none disabled">
     <h1>Settings</h1>
     <label class="margin-5px" for="available-questions">Available Questions</label>
     <div id="available-questions" class="margin-5px available-questions"></div>
-    <span>(More questions coming soon.)</span>
+    <div class="margin-5px text-align-center">(More questions coming soon.)</div>
     <label class="margin-5px" for="num-questions-per-game">Number of Questions Per Game</label>
     <select id="num-questions-per-game" class="margin-5px"></select>
     <div class="margin-5px settings-buttons">
@@ -132,9 +102,7 @@
             settings to take effect.
         </div>
     </div>
-    <div id="settings-hide" class="margin-5px text-align-center">
-        <a href="#">Return to Main Menu</a>
-    </div>
+    <a href="#main-menu" class="margin-5px text-align-center">Return to Main Menu</a>
 </div>
 
 <div id="how-to-play" class="display-none disabled">
@@ -158,9 +126,12 @@
             <b>Settings</b>.) The game presents one question at a time. Each
             question must be answered before the game can present the next
             question. The questions are based from Appendix A
-            <i>Truths We Love to Teach</i> from the brochure
-            <i>Love People&mdash;Make Disciples</i> published by Jehovah's
-            Witnesses.
+            <a href="https://www.jw.org/en/library/books/love-people-make-disciples/appendix-a/">
+                <i>Truths We Love to Teach</i>
+            </a> from the brochure
+            <a href="https://www.jw.org/en/library/books/love-people-make-disciples/">
+                <i>Love People&mdash;Make Disciples</i>
+            </a> published by Jehovah's Witnesses.
         </p>
         <p>
             Below the presented question is a 4 x 2 grid (or 2 x 4 grid for
@@ -171,11 +142,11 @@
         </p>
         <p>
             You can select the text of the scripture to read the full text
-            in a pop-up dialog box before or after the question is answered.
-            The full texts of the scriptures are from the modern-language
-            <i>New World Translation of the Holy Scriptures</i>. To close the
-            pop-up dialog box, select the close button in the upper right
-            corner of the pop-up dialog box.
+            before or after the question is answered. The full texts of the
+            scriptures are from the modern-language
+            <a href="https://www.jw.org/en/library/bible/study-bible/books/">
+                <i>New World Translation of the Holy Scriptures</i>
+            </a>.
         </p>
         <p>
             After selecting the scriptures that answer the presented question,
@@ -225,9 +196,7 @@
             a scripture.
         </p>
         <p>
-            You can select the text of the scripture to read the full text
-            in a pop-up dialog box. To close the pop-up dialog box, select the
-            close button in the upper right corner of the pop-up dialog box.
+            You can select the text of the scripture to read the full text.
         </p>
         <p>
             To present the previous question and its correct scriptures,
@@ -310,18 +279,14 @@
             <b>Return to Main Menu</b>.
         </p>
     </div>
-    <div id="how-to-play-hide" class="margin-5px text-align-center">
-        <a href="#">Return to Main Menu</a>
-    </div>
+    <a href="#main-menu" class="margin-5px text-align-center">Return to Main Menu</a>
 </div>
 
 <div id="about" class="position-center display-none disabled">
     <h1>About</h1>
-    <span><i>Guess the Scriptures</i> <span id="version"></span></span>
-    <span>Copyright &#169; 2025 <a href="https://github.com/guessthescriptures">guessthescriptures</a></span>
-    <div id="about-hide" class="margin-5px text-align-center">
-        <a href="#">Return to Main Menu</a>
-    </div>
+    <div><i>Guess the Scriptures</i> <span id="version"></span></div>
+    <div>Copyright &#169; 2025 <a href="https://github.com/guessthescriptures">guessthescriptures</a></div>
+    <a href="#main-menu" class="margin-5px text-align-center">Return to Main Menu</a>
 </div>
 
 <script type="text/javascript" src="./constants.js"></script>
