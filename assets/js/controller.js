@@ -1,4 +1,4 @@
-const version = "v1.2.0";
+const version = "v1.2.1";
 
 const mainMenuElement = document.getElementById("main-menu");
 const languageSelect = document.getElementById("language");
@@ -52,14 +52,73 @@ function applyEditableSettings() {
 function displayDialog(dialog, content) {
   dialog.children[1].innerHTML = content;
   dialog.classList.remove("display-none");
-  dialog.classList.remove("disabled");
-  dialog.classList.add("dialog");
+  if (!dialog.classList.contains("dialog")) {
+    dialog.classList.add("dialog");
+  }
+  enableElement(dialog);
 }
 
 function displayElement(element) {
-  element.classList.add("element");
   element.classList.remove("display-none");
-  element.classList.remove("disabled");  
+  if (!element.classList.contains("element")) {
+    element.classList.add("element");
+  }
+  enableElement(element);
+}
+
+function displayElementByHash() {
+  if (location.hash === "" || location.hash === "#main-menu") {
+    if (location.hash === "") {
+      location.hash = "main-menu";
+    }
+    displayElement(mainMenuElement);
+    hideElement(newGameElement);
+    hideDialog(gameResponseDialog);
+    hideElement(reviewElement);
+    hideElement(settingsElement);
+    hideElement(howToPlayElement);
+    hideElement(aboutElement);
+  } else if (location.hash === "#new-game") {
+    hideElement(mainMenuElement);
+    displayNewGameElement();
+    hideDialog(gameResponseDialog);
+    hideElement(reviewElement);
+    hideElement(settingsElement);
+    hideElement(howToPlayElement);
+    hideElement(aboutElement);
+  } else if (location.hash === "#review") {
+    hideElement(mainMenuElement);
+    hideElement(newGameElement);
+    hideDialog(gameResponseDialog);
+    displayReviewElement();
+    hideElement(settingsElement);
+    hideElement(howToPlayElement);
+    hideElement(aboutElement);
+  } else if (location.hash === "#settings") {
+    hideElement(mainMenuElement);
+    hideElement(newGameElement);
+    hideDialog(gameResponseDialog);
+    hideElement(reviewElement);
+    displayElement(settingsElement);
+    hideElement(howToPlayElement);
+    hideElement(aboutElement);
+  } else if (location.hash === "#how-to-play") {
+    hideElement(mainMenuElement);
+    hideElement(newGameElement);
+    hideDialog(gameResponseDialog);
+    hideElement(reviewElement);
+    hideElement(settingsElement);
+    displayElement(howToPlayElement);
+    hideElement(aboutElement);
+  } else if (location.hash === "#about") {
+    hideElement(mainMenuElement);
+    hideElement(newGameElement);
+    hideDialog(gameResponseDialog);
+    hideElement(reviewElement);
+    hideElement(settingsElement);
+    hideElement(howToPlayElement);
+    displayElement(aboutElement);
+  }
 }
 
 function displayNewGameElement() {
@@ -77,7 +136,9 @@ function deleteSavedSettings() {
 }
 
 function disableElement(element) {
-  element.classList.add("disabled");
+  if (!element.classList.contains("disabled")) {
+    element.classList.add("disabled");
+  }
 }
 
 function enableElement(element) {
@@ -112,15 +173,19 @@ function getSettings() {
 
 function hideElement(element) {
   element.classList.remove("element");
-  element.classList.add("display-none");
-  element.classList.add("disabled");  
+  if (!element.classList.contains("display-none")) {
+    element.classList.add("display-none");
+  }
+  disableElement(element);
 }
 
 function hideDialog(dialog) {
   removeChildrenFromElement(dialog.children[1]);
   dialog.classList.remove("dialog");
-  dialog.classList.add("display-none");
-  dialog.classList.add("disabled");
+  if (!dialog.classList.contains("display-none")) {
+    dialog.classList.add("display-none");
+  }
+  disableElement(dialog);
 }
 
 function interpolate(str, args) {
@@ -237,58 +302,6 @@ function loadReviewQuestion() {
 
   previousReviewQuestionButton.disabled = currentReviewQuestionIndex === 0;
   nextReviewQuestionButton.disabled = currentReviewQuestionIndex === reviewQuestions.length - 1;
-}
-
-function locationHashChanged() {
-  if (location.hash === "#main-menu") {
-    displayElement(mainMenuElement);
-    hideElement(newGameElement);
-    hideDialog(gameResponseDialog);
-    hideElement(reviewElement);
-    hideElement(settingsElement);
-    hideElement(howToPlayElement);
-    hideElement(aboutElement);
-  } else if (location.hash === "#new-game") {
-    hideElement(mainMenuElement);
-    displayNewGameElement();
-    hideDialog(gameResponseDialog);
-    hideElement(reviewElement);
-    hideElement(settingsElement);
-    hideElement(howToPlayElement);
-    hideElement(aboutElement);  
-  } else if (location.hash === "#review") {
-    hideElement(mainMenuElement);
-    hideElement(newGameElement);
-    hideDialog(gameResponseDialog);
-    displayReviewElement();
-    hideElement(settingsElement);
-    hideElement(howToPlayElement);
-    hideElement(aboutElement);  
-  } else if (location.hash === "#settings") {
-    hideElement(mainMenuElement);
-    hideElement(newGameElement);
-    hideDialog(gameResponseDialog);
-    hideElement(reviewElement);
-    displayElement(settingsElement);
-    hideElement(howToPlayElement);
-    hideElement(aboutElement);    
-  } else if (location.hash === "#how-to-play") {
-    hideElement(mainMenuElement);
-    hideElement(newGameElement);
-    hideDialog(gameResponseDialog);
-    hideElement(reviewElement);
-    hideElement(settingsElement);
-    displayElement(howToPlayElement);
-    hideElement(aboutElement);      
-  } else if (location.hash === "#about") {
-    hideElement(mainMenuElement);
-    hideElement(newGameElement);
-    hideDialog(gameResponseDialog);
-    hideElement(reviewElement);
-    hideElement(settingsElement);
-    hideElement(howToPlayElement);
-    displayElement(aboutElement);        
-  }
 }
 
 function newGame() {
@@ -575,8 +588,6 @@ settings = getSettings();
 editableSettings = JSON.parse(JSON.stringify(settings));
 updateSettingsElement();
 
-location.replace("./#main-menu");
+displayElementByHash();
 
-locationHashChanged();
-
-window.onhashchange = locationHashChanged;
+window.onhashchange = displayElementByHash;
