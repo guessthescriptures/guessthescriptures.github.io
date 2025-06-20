@@ -1,4 +1,7 @@
 const allQuestions = [
+  ///////////////////////////////////////////
+  // The Future
+  ///////////////////////////////////////////
   {
     question: "Which scriptures teach the following truth? " +
               "Current events and attitudes indicate a change is near.",
@@ -45,6 +48,181 @@ const allQuestions = [
   },
   {
     question: "Which scriptures teach the following truth? " +
+              "The earth will never be destroyed.",
+    scriptures: [
+      {
+        ref: "Psalm 104:4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/104/#v19104004"
+      },
+      {
+        ref: "Psalm 104:5",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/104/#v19104005"
+      },
+      {
+        ref: "Psalm 104:24",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/104/#v19104024"
+      },
+      {
+        ref: "Psalm 104:34",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/104/#v19104034"
+      },
+      {
+        ref: "Ecclesiastes 1:4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ecclesiastes/1/#v21001004"
+      },
+      {
+        ref: "Ecclesiastes 1:14",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ecclesiastes/1/#v21001014"
+      },
+      {
+        ref: "Ecclesiastes 1:15",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ecclesiastes/1/#v21001015"
+      },
+      {
+        ref: "Ecclesiastes 9:10",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ecclesiastes/9/#v21009010"
+      }
+    ],
+    correctScriptureRefs: [
+      "Psalm 104:5",
+      "Ecclesiastes 1:4"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "The earth's environment will be restored.",
+    scriptures: [
+      {
+        ref: "Isaiah 35:1, 2",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/35/#v23035001-v23035002"
+      },
+      {
+        ref: "Isaiah 36:16, 17",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/36/#v23036016-v23036017"
+      },
+      {
+        ref: "Isaiah 37:36",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/37/#v23037036"
+      },
+      {
+        ref: "Jeremiah 17:9",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/jeremiah/17/#v24017009"
+      },
+      {
+        ref: "Jeremiah 29:10",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/jeremiah/29/#v24029010"
+      },
+      {
+        ref: "Jeremiah 45:5",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/jeremiah/45/#v24045005"
+      },
+      {
+        ref: "Revelation 11:18",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/revelation/11/#v66011018"
+      },
+      {
+        ref: "Revelation 12:7-9",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/revelation/12/#v66012007-v66012009"
+      },
+      {
+        ref: "Revelation 14:6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/revelation/14/#v66014006"
+      }
+    ],
+    correctScriptureRefs: [
+      "Isaiah 32:1, 2",
+      "Revelation 11:18"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "Everyone will have perfect health.",
+    scriptures: [
+      {
+        ref: "Isaiah 32:1, 2",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/32/#v23032001-v23032002"
+      },
+      {
+        ref: "Isaiah 32:6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/32/#v23032006"
+      },
+      {
+        ref: "Isaiah 33:22",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/33/#v23033022"
+      },
+      {
+        ref: "Isaiah 33:24",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/33/#v23033024"
+      },
+      {
+        ref: "Isaiah 34:1-4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/34/#v23034001-v23034004"
+      },
+      {
+        ref: "Isaiah 34:5",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/34/#v23034005"
+      },
+      {
+        ref: "Isaiah 35:5, 6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/35/#v23035005-v23035006"
+      },
+      {
+        ref: "Isaiah 35:8-10",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/35/#v23035008-v23035010"
+      }
+    ],
+    correctScriptureRefs: [
+      "Isaiah 33:24",
+      "Isaiah 35:5, 6"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "You can live forever on earth.",
+    scriptures: [
+      {
+        ref: "Psalm 37:16, 17",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/37/#v19037016-v19037017"
+      },
+      {
+        ref: "Psalm 37:29",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/37/#v19037029"
+      },
+      {
+        ref: "Psalm 38:15",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/38/#v19038015"
+      },
+      {
+        ref: "Psalm 38:18",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/38/#v19038018"
+      },
+      {
+        ref: "Matthew 5:4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/5/#v40005004"
+      },
+      {
+        ref: "Matthew 5:5",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/5/#v40005005"
+      },
+      {
+        ref: "Matthew 6:3, 4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/6/#v40006003-v40006004"
+      },
+      {
+        ref: "Matthew 6:33",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/6/#v40006033"
+      }
+    ],
+    correctScriptureRefs: [
+      "Psalm 37:29",
+      "Matthew 5:5"
+    ]
+  },
+  ///////////////////////////////////////////
+  // Family
+  ///////////////////////////////////////////
+  {
+    question: "Which scriptures teach the following truth? " +
               "A husband should 'love his wife as he does himself.'",
     scriptures: [
       {
@@ -85,6 +263,78 @@ const allQuestions = [
       "Colossians 3:19"
     ]
   },
+  /*
+  {
+    question: "Which scriptures teach the following truth? " +
+              "A wife should deeply respect her husband.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Ephesians 5:33",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ephesians/5/#v49005033"
+      },
+      {
+        ref: "Colossians 3:18",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/colossians/3/#v51003018"
+      }
+    ],
+    correctScriptureRefs: [
+      "Ephesians 5:33",
+      "Colossians 3:18"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "A husband and a wife should be loyal to each other.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Malachi 2:16",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/malachi/2/#v39002016"
+      },
+      {
+        ref: "Matthew 19:4-6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/19/#v40019004-v40019006"
+      },
+      {
+        ref: "Matthew 19:9",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/19/#v40019009"
+      },
+      {
+        ref: "Hebrews 13:4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/hebrews/13/#v58013004"
+      }
+    ],
+    correctScriptureRefs: [
+      "Malachi 2:16",
+      "Matthew 19:4-6",
+      "Matthew 19:9",
+      "Hebrews 13:4"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "Children who respect and obey their parents will succeed.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Proverbs 1:8, 9",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/proverbs/1/#v20001008-v20001009"
+      },
+      {
+        ref: "Ephesians 6:1-3",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ephesians/6/#v49006001-v49006003"
+      }
+    ],
+    correctScriptureRefs: [
+      "Proverbs 1:8, 9",
+      "Ephesians 6:1-3"
+    ]
+  },
+  */
+  ///////////////////////////////////////////
+  // God
+  ///////////////////////////////////////////
   {
     question: "Which scriptures teach the following truth? " +
               "God has a name.",
@@ -119,6 +369,68 @@ const allQuestions = [
       "Jeremiah 10:10"
     ]
   },
+  /*
+  {
+    question: "Which scriptures teach the following truth? " +
+              "God communicates with us.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "2 Timothy 3:16, 17",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/2-timothy/3/#v55003016-v55003017"
+      },
+      {
+        ref: "2 Peter 1:20, 21",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/2-peter/1/#v61001020-v61001021"
+      }
+    ],
+    correctScriptureRefs: [
+      "2 Timothy 3:16, 17",
+      "2 Peter 1:20, 21"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "God is fair and unbiased.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Deuteronomy 10:17",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/deuteronomy/10/#v5010017"
+      },
+      {
+        ref: "Acts 10:34, 35",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/acts/10/#v44010034-v44010035"
+      }
+    ],
+    correctScriptureRefs: [
+      "Deuteronomy 10:17",
+      "Acts 10:34, 35"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "God wants to help us.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Psalm 46:1",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/46/#v19046001"
+      },
+      {
+        ref: "Psalm 145:18, 19",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/145/#v19145018-v19145019"
+      }
+    ],
+    correctScriptureRefs: [
+      "Psalm 46:1",
+      "Psalm 145:18, 19"
+    ]
+  },
+  */
+  ///////////////////////////////////////////
+  // Prayer
+  ///////////////////////////////////////////
   {
     question: "Which scriptures teach the following truth? " +
               "God wants us to pray to him.",
@@ -162,6 +474,49 @@ const allQuestions = [
       "1 Peter 5:7"
     ]
   },
+  /*
+  {
+    question: "Which scriptures teach the following truth? " +
+              "The Bible teaches us how to pray.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Matthew 6:7-13",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/6/#v40006007-v40006013"
+      },
+      {
+        ref: "Luke 11:1-4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/luke/11/#v42011001-v42011004"
+      }
+    ],
+    correctScriptureRefs: [
+      "Matthew 6:7-13",
+      "Luke 11:1-4"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "We should pray often.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Matthew 7:7, 8",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/7/#v40007007-v40007008"
+      },
+      {
+        ref: "1 Thessalonians 5:17",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-thessalonians/5/#v52005017"
+      }
+    ],
+    correctScriptureRefs: [
+      "Matthew 7:7, 8",
+      "1 Thessalonians 5:17"
+    ]
+  },
+  */
+  ///////////////////////////////////////////
+  // Jesus
+  ///////////////////////////////////////////
   {
     question: "Which scriptures teach the following truth? " +
               "Jesus was a great teacher whose advice always works.",
@@ -205,6 +560,83 @@ const allQuestions = [
       "Matthew 7:12"
     ]
   },
+  /*
+  {
+    question: "Which scriptures teach the following truth? " +
+              "Jesus foretold events we see today.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Matthew 24:3",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/24/#v40024003"
+      },
+      {
+        ref: "Matthew 24:7, 8",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/24/#v40024007-v40024008"
+      },
+      {
+        ref: "Matthew 24:14",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/24/#v40024014"
+      },
+      {
+        ref: "Luke 21:10, 11",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/luke/21/#v42021010-v42021011"
+      }
+    ],
+    correctScriptureRefs: [
+      "Matthew 24:3",
+      "Matthew 24:7, 8",
+      "Matthew 24:14",
+      "Luke 21:10, 11"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "Jesus is God's Son.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Matthew 16:16",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/16/#v40016016"
+      },
+      {
+        ref: "John 3:16",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/john/3/#v43003016"
+      },
+      {
+        ref: "1 John 4:15",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-john/4/#v62004015"
+      }
+    ],
+    correctScriptureRefs: [
+      "Matthew 16:16",
+      "John 3:16",
+      "1 John 4:15"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "Jesus is not God Almighty.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "John 14:28",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/john/14/#v43014028"
+      },
+      {
+        ref: "1 Corinthians 11:3",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-corinthians/11/#v46011003"
+      }
+    ],
+    correctScriptureRefs: [
+      "John 14:28",
+      "1 Corinthians 11:3"
+    ]
+  },
+  */
+  ///////////////////////////////////////////
+  // God's Kingdom
+  ///////////////////////////////////////////
   {
     question: "Which scriptures teach the following truth? " +
               "God's Kingdom is a real government in heaven.",
@@ -249,6 +681,54 @@ const allQuestions = [
       "Revelation 11:15"
     ]
   },
+  /*
+  {
+    question: "Which scriptures teach the following truth? " +
+              "God's Kingdom will replace human governments.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Psalm 2:7-9",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/2/#v19002007-v19002009"
+      },
+      {
+        ref: "Daniel 2:44",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/daniel/2/#v27002044"
+      }
+    ],
+    correctScriptureRefs: [
+      "Psalm 2:7-9",
+      "Daniel 2:44"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "God's Kingdom is the only solution to mankind's problems.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Psalm 37:10, 11",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/37/#v19037010-v19037011"
+      },
+      {
+        ref: "Psalm 46:9",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/46/#v19046009"
+      },
+      {
+        ref: "Isaiah 65:21-23",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/65/#v23065021-v23065023"
+      }
+    ],
+    correctScriptureRefs: [
+      "Psalm 37:10, 11",
+      "Psalm 46:9",
+      "Isaiah 65:21-23"
+    ]
+  },
+  */
+  ///////////////////////////////////////////
+  // Suffering
+  ///////////////////////////////////////////
   {
     question: "Which scriptures teach the following truth? " +
               "God does not cause our suffering.",
@@ -291,6 +771,73 @@ const allQuestions = [
       "James 1:13"
     ]
   },
+  /*
+  {
+    question: "Which scriptures teach the following truth? " +
+              "Satan rules this world.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Luke 4:5, 6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/luke/4/#v42004005-v42004006"
+      },
+      {
+        ref: "1 John 5:19",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-john/5/#v62005019"
+      }
+    ],
+    correctScriptureRefs: [
+      "Luke 4:5, 6",
+      "1 John 5:19"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "God cares about your suffering.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Psalm 34:17-19",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/34/#v19034017-v19034019"
+      },
+      {
+        ref: "Isaiah 41:10",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/41/#v23041010"
+      },
+      {
+        ref: "Isaiah 41:13",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/41/#v23041013"
+      }
+    ],
+    correctScriptureRefs: [
+      "Psalm 34:17-19",
+      "Isaiah 41:10",
+      "Isaiah 41:13"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "God will soon end suffering.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Isaiah 65:17",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/65/#v23065017"
+      },
+      {
+        ref: "Revelation 21:3, 4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/revelation/21/#v66021003-v66021004"
+      }
+    ],
+    correctScriptureRefs: [
+      "Isaiah 65:17",
+      "Revelation 21:3, 4"
+    ]
+  },
+  */
+  ///////////////////////////////////////////
+  // Death
+  ///////////////////////////////////////////
   {
     question: "Which scriptures teach the following truth? " +
               "The dead are unconscious; they are not suffering.",
@@ -333,6 +880,78 @@ const allQuestions = [
       "John 11:11-14"
     ]
   },
+  /*
+  {
+    question: "Which scriptures teach the following truth? " +
+              "The dead cannot help us or harm us.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Psalm 146:4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/146/#v19146004"
+      },
+      {
+        ref: "Ecclesiastes 9:6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ecclesiastes/9/#v21009006"
+      },
+      {
+        ref: "Ecclesiastes 9:10",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ecclesiastes/9/#v21009010"
+      }
+    ],
+    correctScriptureRefs: [
+      "Psalm 146:4",
+      "Ecclesiastes 9:6",
+      "Ecclesiastes 9:10"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "Dead loved ones will be resurrected.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Job 14:13-15",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/job/14/#v18014013-v18014015"
+      },
+      {
+        ref: "John 5:28, 29",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/john/5/#v43005028-v43005029"
+      },
+      {
+        ref: "Acts 24:15",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/acts/24/#v44024015"
+      }
+    ],
+    correctScriptureRefs: [
+      "Job 14:13-15",
+      "John 5:28, 29",
+      "Acts 24:15"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "\"Death will be no more.\"",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Revelation 21:3, 4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/revelation/21/#v66021003-v66021004"
+      },
+      {
+        ref: "Isaiah 25:8",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/25/#v23025008"
+      }
+    ],
+    correctScriptureRefs: [
+      "Revelation 21:3, 4",
+      "Isaiah 25:8"
+    ]
+  },
+  */
+  ///////////////////////////////////////////
+  // Religion
+  ///////////////////////////////////////////
   {
     question: "Which scriptures teach the following truth? " +
               "Not all religions please God.",
@@ -375,7 +994,51 @@ const allQuestions = [
       "Matthew 7:13, 14",
       "Matthew 7:21-23"
     ]
+  }/*,
+  {
+    question: "Which scriptures teach the following truth? " +
+              "God hates hypocrisy.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Isaiah 29:13",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/29/#v23029013"
+      },
+      {
+        ref: "Micah 3:11",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/micah/3/#v33003011"
+      },
+      {
+        ref: "Mark 7:6-8",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/mark/7/#v41007006-v41007008"
+      }
+    ],
+    correctScriptureRefs: [
+      "Isaiah 29:13",
+      "Micah 3:11",
+      "Mark 7:6-8"
+    ]
+  },
+  {
+    question: "Which scriptures teach the following truth? " +
+              "Genuine love identifies true religion.",
+    scriptures: [
+      // TODO: Add incorrect scriptures
+      {
+        ref: "Micah 4:3",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/micah/4/#v33004003"
+      },
+      {
+        ref: "John 13:34, 35",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/john/13/#v43013034-v43013035"
+      }
+    ],
+    correctScriptureRefs: [
+      "Micah 4:3",
+      "John 13:34, 35"
+    ]
   }
+  */
 ];
 
 const defaultSettings = {
