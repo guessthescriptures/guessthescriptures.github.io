@@ -93,8 +93,8 @@ const allQuestions = [
               "The earth's environment will be restored.",
     scriptures: [
       {
-        ref: "Isaiah 32:1, 2",
-        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/32/#v23032001-v23032002"
+        ref: "Isaiah 35:1, 2",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/35/#v23035001-v23035002"
       },
       {
         ref: "Isaiah 36:16, 17",
@@ -126,7 +126,7 @@ const allQuestions = [
       }
     ],
     correctScriptureRefs: [
-      "Isaiah 32:1, 2",
+      "Isaiah 35:1, 2",
       "Revelation 11:18"
     ]
   },
