@@ -93,16 +93,12 @@ const allQuestions = [
               "The earth's environment will be restored.",
     scriptures: [
       {
-        ref: "Isaiah 35:1, 2",
-        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/35/#v23035001-v23035002"
+        ref: "Isaiah 32:1, 2",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/32/#v23032001-v23032002"
       },
       {
         ref: "Isaiah 36:16, 17",
         href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/36/#v23036016-v23036017"
-      },
-      {
-        ref: "Isaiah 37:36",
-        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/37/#v23037036"
       },
       {
         ref: "Jeremiah 17:9",
