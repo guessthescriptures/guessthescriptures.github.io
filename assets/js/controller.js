@@ -1,4 +1,4 @@
-const version = "v1.3.3";
+const version = "v1.4.0";
 
 const mainMenuElement = document.getElementById("main-menu");
 const languageSelect = document.getElementById("language");
@@ -24,17 +24,14 @@ const nextReviewQuestionButton = document.getElementById("next-review-question")
 const settingsElement = document.getElementById("settings");
 const availableQuestionsElement = document.getElementById("available-questions");
 const numQuestionsPerGameSelect = document.getElementById("num-questions-per-game");
-const applyCurrentSettingsButton = document.getElementById("apply-current-settings");
-const saveCurrentSettingsButton = document.getElementById("save-current-settings");
-const deleteSavedSettingsButton = document.getElementById("delete-saved-settings");
-const resetToDefaultSettingsButton = document.getElementById("reset-to-default-settings");
+const saveSettingsButton = document.getElementById("save-settings");
+const resetSettingsButton = document.getElementById("reset-settings");
 
 const howToPlayElement = document.getElementById("how-to-play");
 
 const aboutElement = document.getElementById("about");
 const versionElement = document.getElementById("version");
 
-let settings = null;
 let editableSettings = null;
 let reviewQuestions = [];
 let currentReviewQuestionIndex = 0;
@@ -44,10 +41,6 @@ let currentGameQuestionIndex = 0;
 let selectedGameScriptureRefs = [];
 let selectedGameScriptureRefsSubmitted = false;
 let gameScriptureRefClickedBeforeSubmission = false;
-
-function applyEditableSettings() {
-  settings = JSON.parse(JSON.stringify(editableSettings));
-}
 
 function displayDialog(dialog, content) {
   dialog.children[1].innerHTML = content;
@@ -131,10 +124,6 @@ function displayReviewElement() {
   displayElement(reviewElement);
 }
 
-function deleteSavedSettings() {
-  localStorage.removeItem(settingsLocalStorageItemKey);
-}
-
 function disableElement(element) {
   if (!element.classList.contains("disabled")) {
     element.classList.add("disabled");
@@ -146,13 +135,13 @@ function enableElement(element) {
 }
 
 function getAvailableQuestions() {
-  return allQuestions.filter(q => settings.availableQuestions.includes(q.question));
+  return allQuestions.filter(q => getSettings().availableQuestions.includes(q.question));
 }
 
 function getGameQuestions() {
   const availableQuestions = JSON.parse(JSON.stringify(getAvailableQuestions()));
   shuffleArray(availableQuestions);
-  const questions = availableQuestions.slice(0, settings.numQuestionsPerGame);
+  const questions = availableQuestions.slice(0, getSettings().numQuestionsPerGame);
   questions.forEach((question) => {
     shuffleArray(question.scriptures);
   });
@@ -344,13 +333,18 @@ function removeChildrenFromElement(element) {
   }
 }
 
-function resetToDefaultSettings() {
-  editableSettings = JSON.parse(JSON.stringify(defaultSettings));
+function removeSettings() {
+  localStorage.removeItem(settingsLocalStorageItemKey);
+}
+
+function resetSettings() {
+  removeSettings();
+  editableSettings = getSettings();
   updateSettingsElement();
 }
 
-function saveEditableSettings() {
-  localStorage.setItem(settingsLocalStorageItemKey, JSON.stringify(editableSettings));
+function saveSettings() {
+  setSettings(editableSettings);
 }
 
 function selectLanguage(languageSelect) {
@@ -365,6 +359,10 @@ function selectNumQuestionsPerGame(numQuestionsPerGameSelect) {
 function selectReviewQuestion(reviewQuestionSelect) {
   currentReviewQuestionIndex = parseInt(reviewQuestionSelect.value);
   loadReviewQuestion();
+}
+
+function setSettings(settings) {
+  localStorage.setItem(settingsLocalStorageItemKey, JSON.stringify(settings));
 }
 
 function shuffleArray(array) {
@@ -574,18 +572,13 @@ numQuestionsPerGameSelect.addEventListener("change", () =>
   selectNumQuestionsPerGame(numQuestionsPerGameSelect)
 );
 
-applyCurrentSettingsButton.addEventListener("click", () => applyEditableSettings());
+saveSettingsButton.addEventListener("click", () => saveSettings());
 
-saveCurrentSettingsButton.addEventListener("click", () => saveEditableSettings());
-
-deleteSavedSettingsButton.addEventListener("click", () => deleteSavedSettings());
-
-resetToDefaultSettingsButton.addEventListener("click", () => resetToDefaultSettings());
+resetSettingsButton.addEventListener("click", () => resetSettings());
 
 versionElement.textContent = version;
 
-settings = getSettings();
-editableSettings = JSON.parse(JSON.stringify(settings));
+editableSettings = getSettings();
 updateSettingsElement();
 
 displayElementByHash();
