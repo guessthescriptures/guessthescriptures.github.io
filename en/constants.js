@@ -259,19 +259,41 @@ const allQuestions = [
       "Colossians 3:19"
     ]
   },
-  /*
   {
     question: "Which scriptures teach the following truth? " +
               "A wife should deeply respect her husband.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Galatians 6:1",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/galatians/6/#v48006001"
+      },
+      {
+        ref: "Galatians 6:4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/galatians/6/#v48006004"
+      },
+      {
+        ref: "Ephesians 5:17",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ephesians/5/#v49005017"
+      },
+      {
+        ref: "Ephesians 5:25",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ephesians/5/#v49005025"
+      },
       {
         ref: "Ephesians 5:33",
         href: "https://www.jw.org/en/library/bible/study-bible/books/ephesians/5/#v49005033"
       },
       {
+        ref: "Colossians 3:5",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/colossians/3/#v51003005"
+      },
+      {
         ref: "Colossians 3:18",
         href: "https://www.jw.org/en/library/bible/study-bible/books/colossians/3/#v51003018"
+      },
+      {
+        ref: "Colossians 3:19",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/colossians/3/#v51003019"
       }
     ],
     correctScriptureRefs: [
@@ -283,7 +305,10 @@ const allQuestions = [
     question: "Which scriptures teach the following truth? " +
               "A husband and a wife should be loyal to each other.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Malachi 2:7",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/malachi/2/#v39002007"
+      },
       {
         ref: "Malachi 2:16",
         href: "https://www.jw.org/en/library/bible/study-bible/books/malachi/2/#v39002016"
@@ -295,6 +320,18 @@ const allQuestions = [
       {
         ref: "Matthew 19:9",
         href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/19/#v40019009"
+      },
+      {
+        ref: "Matthew 19:10",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/19/#v40019010"
+      },
+      {
+        ref: "Matthew 19:12",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/19/#v40019012"
+      },
+      {
+        ref: "Hebrews 13:2",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/hebrews/13/#v58013002"
       },
       {
         ref: "Hebrews 13:4",
@@ -312,14 +349,37 @@ const allQuestions = [
     question: "Which scriptures teach the following truth? " +
               "Children who respect and obey their parents will succeed.",
     scriptures: [
-      // TODO: Add incorrect scriptures
       {
         ref: "Proverbs 1:8, 9",
         href: "https://www.jw.org/en/library/bible/study-bible/books/proverbs/1/#v20001008-v20001009"
       },
       {
+        ref: "Proverbs 2:3-5",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/proverbs/2/#v20002003-v20002005"
+      },
+      {
+        ref: "Proverbs 2:10, 11",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/proverbs/2/#v20002010-v20002011"
+      },
+      {
+        ref: "Proverbs 3:5, 6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/proverbs/3/#v20003005-v20003006"
+      },
+      {
         ref: "Ephesians 6:1-3",
         href: "https://www.jw.org/en/library/bible/study-bible/books/ephesians/6/#v49006001-v49006003"
+      },
+      {
+        ref: "Ephesians 6:4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ephesians/6/#v49006004"
+      },
+      {
+        ref: "Ephesians 6:11, 12",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ephesians/6/#v49006011-v49006012"
+      },
+      {
+        ref: "Ephesians 6:14-17",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ephesians/6/#v49006014-v49006017"
       }
     ],
     correctScriptureRefs: [
@@ -327,7 +387,6 @@ const allQuestions = [
       "Ephesians 6:1-3"
     ]
   },
-  */
   ///////////////////////////////////////////
   // God
   ///////////////////////////////////////////
