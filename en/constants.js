@@ -424,15 +424,37 @@ const allQuestions = [
       "Jeremiah 10:10"
     ]
   },
-  /*
   {
     question: "Which scriptures teach the following truth? " +
               "God communicates with us.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "1 Timothy 3:1-7",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-timothy/3/#v54003001-v54003007"
+      },
+      {
+        ref: "2 Timothy 3:1-5",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/2-timothy/3/#v55003001-v55003005"
+      },
+      {
+        ref: "2 Timothy 3:13",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/2-timothy/3/#v55003013"
+      },
       {
         ref: "2 Timothy 3:16, 17",
         href: "https://www.jw.org/en/library/bible/study-bible/books/2-timothy/3/#v55003016-v55003017"
+      },
+      {
+        ref: "1 Peter 1:13-16",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-peter/1/#v60001013-v60001016"
+      },
+      {
+        ref: "1 Peter 1:22",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-peter/1/#v60001022"
+      },
+      {
+        ref: "2 Peter 1:5-8",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/2-peter/1/#v61001005-v61001008"
       },
       {
         ref: "2 Peter 1:20, 21",
@@ -448,14 +470,37 @@ const allQuestions = [
     question: "Which scriptures teach the following truth? " +
               "God is fair and unbiased.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Deuteronomy 10:16",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/deuteronomy/10/#v5010016"
+      },
       {
         ref: "Deuteronomy 10:17",
         href: "https://www.jw.org/en/library/bible/study-bible/books/deuteronomy/10/#v5010017"
       },
       {
+        ref: "Deuteronomy 11:10",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/deuteronomy/11/#v5011010"
+      },
+      {
+        ref: "Matthew 10:22",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/10/#v40010022"
+      },
+      {
+        ref: "Matthew 10:24",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/10/#v40010024"
+      },
+      {
         ref: "Acts 10:34, 35",
         href: "https://www.jw.org/en/library/bible/study-bible/books/acts/10/#v44010034-v44010035"
+      },
+      {
+        ref: "Acts 11:28",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/acts/11/#v44011028"
+      },
+      {
+        ref: "Acts 12:1, 2",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/acts/12/#v44012001-v44012002"
       }
     ],
     correctScriptureRefs: [
@@ -467,14 +512,37 @@ const allQuestions = [
     question: "Which scriptures teach the following truth? " +
               "God wants to help us.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Psalm 45:1",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/45/#v19045001"
+      },
       {
         ref: "Psalm 46:1",
         href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/46/#v19046001"
       },
       {
+        ref: "Psalm 46:6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/46/#v19046006"
+      },
+      {
+        ref: "Psalm 80:4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/80/#v19080004"
+      },
+      {
+        ref: "Psalm 80:5",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/80/#v19080005"
+      },
+      {
         ref: "Psalm 145:18, 19",
         href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/145/#v19145018-v19145019"
+      },
+      {
+        ref: "Psalm 146:3, 4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/146/#v19146003-v19146004"
+      },
+      {
+        ref: "Psalm 147:17",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/147/#v19147017"
       }
     ],
     correctScriptureRefs: [
@@ -482,7 +550,6 @@ const allQuestions = [
       "Psalm 145:18, 19"
     ]
   },
-  */
   ///////////////////////////////////////////
   // Prayer
   ///////////////////////////////////////////
