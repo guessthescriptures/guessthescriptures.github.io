@@ -596,19 +596,41 @@ const allQuestions = [
       "1 Peter 5:7"
     ]
   },
-  /*
   {
     question: "Which scriptures teach the following truth? " +
               "The Bible teaches us how to pray.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Matthew 6:1-4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/6/#v40006001-v40006004"
+      },
       {
         ref: "Matthew 6:7-13",
         href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/6/#v40006007-v40006013"
       },
       {
+        ref: "Matthew 6:16-18",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/6/#v40006016-v40006018"
+      },
+      {
+        ref: "Mark 6:1-6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/mark/6/#v41006001-v41006006"
+      },
+      {
+        ref: "Mark 11:26",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/mark/11/#v41011026"
+      },
+      {
         ref: "Luke 11:1-4",
         href: "https://www.jw.org/en/library/bible/study-bible/books/luke/11/#v42011001-v42011004"
+      },
+      {
+        ref: "Luke 11:24-26",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/luke/11/#v42011024-v42011026"
+      },
+      {
+        ref: "John 11:11-14",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/john/11/#v43011011-v43011014"
       }
     ],
     correctScriptureRefs: [
@@ -620,14 +642,37 @@ const allQuestions = [
     question: "Which scriptures teach the following truth? " +
               "We should pray often.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Matthew 7:1-5",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/7/#v40007001-v40007005"
+      },
       {
         ref: "Matthew 7:7, 8",
         href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/7/#v40007007-v40007008"
       },
       {
+        ref: "Mark 7:1-8",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/mark/7/#v41007001-v41007008"
+      },
+      {
+        ref: "Luke 7:1-10",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/luke/7/#v42007001-v42007010"
+      },
+      {
+        ref: "1 Thessalonians 5:16",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-thessalonians/5/#v52005016"
+      },
+      {
         ref: "1 Thessalonians 5:17",
         href: "https://www.jw.org/en/library/bible/study-bible/books/1-thessalonians/5/#v52005017"
+      },
+      {
+        ref: "1 Timothy 5:16",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-timothy/5/#v54005016"
+      },
+      {
+        ref: "1 Timothy 5:17",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-timothy/5/#v54005017"
       }
     ],
     correctScriptureRefs: [
@@ -635,7 +680,6 @@ const allQuestions = [
       "1 Thessalonians 5:17"
     ]
   },
-  */
   ///////////////////////////////////////////
   // Jesus
   ///////////////////////////////////////////
