@@ -726,12 +726,14 @@ const allQuestions = [
       "Matthew 7:12"
     ]
   },
-  /*
   {
     question: "Which scriptures teach the following truth? " +
               "Jesus foretold events we see today.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Matthew 24:1",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/24/#v40024001"
+      },
       {
         ref: "Matthew 24:3",
         href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/24/#v40024003"
@@ -745,8 +747,20 @@ const allQuestions = [
         href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/24/#v40024014"
       },
       {
+        ref: "Mark 12:41-44",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/mark/12/#v41012041-v41012044"
+      },
+      {
+        ref: "Luke 21:1-4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/luke/21/#v42021001-v42021004"
+      },
+      {
         ref: "Luke 21:10, 11",
         href: "https://www.jw.org/en/library/bible/study-bible/books/luke/21/#v42021010-v42021011"
+      },
+      {
+        ref: "Luke 21:37, 38",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/luke/21/#v42021037-v42021038"
       }
     ],
     correctScriptureRefs: [
@@ -756,6 +770,7 @@ const allQuestions = [
       "Luke 21:10, 11"
     ]
   },
+  /*
   {
     question: "Which scriptures teach the following truth? " +
               "Jesus is God's Son.",
