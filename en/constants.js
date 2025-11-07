@@ -770,23 +770,41 @@ const allQuestions = [
       "Luke 21:10, 11"
     ]
   },
-  /*
   {
     question: "Which scriptures teach the following truth? " +
               "Jesus is God's Son.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Matthew 16:6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/16/#v40016006"
+      },
       {
         ref: "Matthew 16:16",
         href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/16/#v40016016"
+      },
+      {
+        ref: "Matthew 16:24",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/16/#v40016024"
+      },
+      {
+        ref: "John 3:8",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/john/3/#v43003008"
       },
       {
         ref: "John 3:16",
         href: "https://www.jw.org/en/library/bible/study-bible/books/john/3/#v43003016"
       },
       {
+        ref: "John 4:23",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/john/4/#v43004023"
+      },
+      {
         ref: "1 John 4:15",
         href: "https://www.jw.org/en/library/bible/study-bible/books/1-john/4/#v62004015"
+      },
+      {
+        ref: "1 John 4:20",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-john/4/#v62004020"
       }
     ],
     correctScriptureRefs: [
@@ -799,14 +817,37 @@ const allQuestions = [
     question: "Which scriptures teach the following truth? " +
               "Jesus is not God Almighty.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Luke 14:11",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/luke/14/#v42014011"
+      },
+      {
+        ref: "Luke 15:7",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/luke/15/#v42015007"
+      },
+      {
+        ref: "John 13:35",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/john/13/#v43013035"
+      },
       {
         ref: "John 14:28",
         href: "https://www.jw.org/en/library/bible/study-bible/books/john/14/#v43014028"
       },
       {
+        ref: "Romans 10:10",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/romans/10/#v45010010"
+      },
+      {
+        ref: "Romans 11:33",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/romans/11/#v45011033"
+      },
+      {
         ref: "1 Corinthians 11:3",
         href: "https://www.jw.org/en/library/bible/study-bible/books/1-corinthians/11/#v46011003"
+      },
+      {
+        ref: "1 Corinthians 13:11",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-corinthians/13/#v46013011"
       }
     ],
     correctScriptureRefs: [
@@ -814,7 +855,6 @@ const allQuestions = [
       "1 Corinthians 11:3"
     ]
   },
-  */
   ///////////////////////////////////////////
   // God's Kingdom
   ///////////////////////////////////////////
