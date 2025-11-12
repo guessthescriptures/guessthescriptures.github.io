@@ -902,12 +902,14 @@ const allQuestions = [
       "Revelation 11:15"
     ]
   },
-  /*
   {
     question: "Which scriptures teach the following truth? " +
               "God's Kingdom will replace human governments.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Psalm 1:1-3",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/1/#v19001001-v19001003"
+      },
       {
         ref: "Psalm 2:7-9",
         href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/2/#v19002007-v19002009"
@@ -915,6 +917,26 @@ const allQuestions = [
       {
         ref: "Daniel 2:44",
         href: "https://www.jw.org/en/library/bible/study-bible/books/daniel/2/#v27002044"
+      },
+      {
+        ref: "Daniel 6:22",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/daniel/6/#v27006022"
+      },
+      {
+        ref: "Matthew 6:34",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/6/#v40006034"
+      },
+      {
+        ref: "Matthew 13:44",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/matthew/13/#v40013044"
+      },
+      {
+        ref: "Revelation 7:9",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/revelation/7/#v66007009"
+      },
+      {
+        ref: "Revelation 16:21",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/revelation/16/#v66016021"
       }
     ],
     correctScriptureRefs: [
@@ -926,7 +948,10 @@ const allQuestions = [
     question: "Which scriptures teach the following truth? " +
               "God's Kingdom is the only solution to mankind's problems.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Psalm 36:1-4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/36/#v19036001-v19036004"
+      },
       {
         ref: "Psalm 37:10, 11",
         href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/37/#v19037010-v19037011"
@@ -934,6 +959,22 @@ const allQuestions = [
       {
         ref: "Psalm 46:9",
         href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/46/#v19046009"
+      },
+      {
+        ref: "Psalm 48:12, 13",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/48/#v19048012-v19048013"
+      },
+      {
+        ref: "Psalm 51:17",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/51/#v19051017"
+      },
+      {
+        ref: "Isaiah 1:18",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/1/#v23001018"
+      },
+      {
+        ref: "Isaiah 65:11",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/65/#v23065011"
       },
       {
         ref: "Isaiah 65:21-23",
@@ -946,7 +987,6 @@ const allQuestions = [
       "Isaiah 65:21-23"
     ]
   },
-  */
   ///////////////////////////////////////////
   // Suffering
   ///////////////////////////////////////////
