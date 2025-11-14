@@ -1032,15 +1032,37 @@ const allQuestions = [
       "James 1:13"
     ]
   },
-  /*
   {
     question: "Which scriptures teach the following truth? " +
               "Satan rules this world.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Luke 4:3, 4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/luke/4/#v42004003-v42004004"
+      },
       {
         ref: "Luke 4:5, 6",
         href: "https://www.jw.org/en/library/bible/study-bible/books/luke/4/#v42004005-v42004006"
+      },
+      {
+        ref: "John 4:23, 24",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/john/4/#v43004023-v43004024"
+      },
+      {
+        ref: "John 4:34",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/john/4/#v43004034"
+      },
+      {
+        ref: "1 Peter 5:2, 3",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-peter/5/#v60005002-v60005003"
+      },
+      {
+        ref: "1 Peter 5:10",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-peter/5/#v60005010"
+      },
+      {
+        ref: "1 John 5:3",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-john/5/#v62005003"
       },
       {
         ref: "1 John 5:19",
@@ -1056,7 +1078,10 @@ const allQuestions = [
     question: "Which scriptures teach the following truth? " +
               "God cares about your suffering.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Psalm 33:17",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/33/#v19033017"
+      },
       {
         ref: "Psalm 34:17-19",
         href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/34/#v19034017-v19034019"
@@ -1068,7 +1093,23 @@ const allQuestions = [
       {
         ref: "Isaiah 41:13",
         href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/41/#v23041013"
-      }
+      },
+      {
+        ref: "Isaiah 42:8",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/42/#v23042008"
+      },
+      {
+        ref: "Isaiah 44:9",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/44/#v23044009"
+      },
+      {
+        ref: "1 Peter 3:3, 4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-peter/3/#v60003003-v60003004"
+      },
+      {
+        ref: "1 Peter 4:4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-peter/4/#v60004004"
+      },
     ],
     correctScriptureRefs: [
       "Psalm 34:17-19",
@@ -1080,10 +1121,33 @@ const allQuestions = [
     question: "Which scriptures teach the following truth? " +
               "God will soon end suffering.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Psalm 37:8",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/37/#v19037008"
+      },
+      {
+        ref: "Psalm 37:16",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/37/#v19037016"
+      },
+      {
+        ref: "Isaiah 65:12",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/65/#v23065012"
+      },
       {
         ref: "Isaiah 65:17",
         href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/65/#v23065017"
+      },
+      {
+        ref: "1 Corinthians 14:8, 9",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-corinthians/14/#v46014008-v46014009"
+      },
+      {
+        ref: "1 Corinthians 15:33",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/1-corinthians/15/#v46015033"
+      },
+      {
+        ref: "Revelation 19:10",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/revelation/19/#v66019010"
       },
       {
         ref: "Revelation 21:3, 4",
@@ -1095,7 +1159,6 @@ const allQuestions = [
       "Revelation 21:3, 4"
     ]
   },
-  */
   ///////////////////////////////////////////
   // Death
   ///////////////////////////////////////////
