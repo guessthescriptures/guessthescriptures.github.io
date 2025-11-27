@@ -1204,12 +1204,14 @@ const allQuestions = [
       "John 11:11-14"
     ]
   },
-  /*
   {
     question: "Which scriptures teach the following truth? " +
               "The dead cannot help us or harm us.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Psalm 146:3",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/146/#v19146003"
+      },
       {
         ref: "Psalm 146:4",
         href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/146/#v19146004"
@@ -1221,6 +1223,22 @@ const allQuestions = [
       {
         ref: "Ecclesiastes 9:10",
         href: "https://www.jw.org/en/library/bible/study-bible/books/ecclesiastes/9/#v21009010"
+      },
+      {
+        ref: "Ecclesiastes 9:11",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ecclesiastes/9/#v21009011"
+      },
+      {
+        ref: "Ecclesiastes 9:18",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ecclesiastes/9/#v21009018"
+      },
+      {
+        ref: "Ezekiel 18:23",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ezekiel/18/#v26018023"
+      },
+      {
+        ref: "Ezekiel 18:32",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/ezekiel/18/#v26018032"
       }
     ],
     correctScriptureRefs: [
@@ -1233,10 +1251,25 @@ const allQuestions = [
     question: "Which scriptures teach the following truth? " +
               "Dead loved ones will be resurrected.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Job 14:1, 2",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/job/14/#v18014001-v18014002"
+      },
       {
         ref: "Job 14:13-15",
         href: "https://www.jw.org/en/library/bible/study-bible/books/job/14/#v18014013-v18014015"
+      },
+      {
+        ref: "Psalm 91:7, 8",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/91/#v19091007-v19091008"
+      },
+      {
+        ref: "Psalm 91:11, 12",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/psalms/91/#v19091011-v19091012"
+      },
+      {
+        ref: "John 5:19",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/john/5/#v43005019"
       },
       {
         ref: "John 5:28, 29",
@@ -1245,6 +1278,10 @@ const allQuestions = [
       {
         ref: "Acts 24:15",
         href: "https://www.jw.org/en/library/bible/study-bible/books/acts/24/#v44024015"
+      },
+      {
+        ref: "Acts 24:25",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/acts/24/#v44024025"
       }
     ],
     correctScriptureRefs: [
@@ -1257,22 +1294,44 @@ const allQuestions = [
     question: "Which scriptures teach the following truth? " +
               "\"Death will be no more.\"",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Job 14:1, 2",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/job/14/#v18014001-v18014002"
+      },
+      {
+        ref: "Job 14:4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/job/14/#v18014004"
+      },
+      {
+        ref: "Proverbs 2:6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/proverbs/2/#v20002006"
+      },
+      {
+        ref: "Proverbs 2:22",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/proverbs/2/#v20002022"
+      },
+      {
+        ref: "Isaiah 25:6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/25/#v23025006"
+      },
+      {
+        ref: "Isaiah 25:8",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/25/#v23025008"
+      },
       {
         ref: "Revelation 21:3, 4",
         href: "https://www.jw.org/en/library/bible/study-bible/books/revelation/21/#v66021003-v66021004"
       },
       {
-        ref: "Isaiah 25:8",
-        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/25/#v23025008"
-      }
+        ref: "Revelation 21:8",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/revelation/21/#v66021008"
+      },
     ],
     correctScriptureRefs: [
-      "Revelation 21:3, 4",
-      "Isaiah 25:8"
+      "Isaiah 25:8",
+      "Revelation 21:3, 4"
     ]
   },
-  */
   ///////////////////////////////////////////
   // Religion
   ///////////////////////////////////////////
@@ -1318,23 +1377,42 @@ const allQuestions = [
       "Matthew 7:13, 14",
       "Matthew 7:21-23"
     ]
-  }/*,
+  },
   {
     question: "Which scriptures teach the following truth? " +
               "God hates hypocrisy.",
     scriptures: [
-      // TODO: Add incorrect scriptures
       {
         ref: "Isaiah 29:13",
         href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/29/#v23029013"
+      },
+      {
+        ref: "Isaiah 29:19",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/isaiah/29/#v23029019"
+      },
+      {
+        ref: "Jeremiah 29:11",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/jeremiah/29/#v24029011"
+      },
+      {
+        ref: "Jeremiah 29:14",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/jeremiah/29/#v24029014"
       },
       {
         ref: "Micah 3:11",
         href: "https://www.jw.org/en/library/bible/study-bible/books/micah/3/#v33003011"
       },
       {
+        ref: "Micah 4:1-4",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/micah/4/#v33004001-v33004004"
+      },
+      {
         ref: "Mark 7:6-8",
         href: "https://www.jw.org/en/library/bible/study-bible/books/mark/7/#v41007006-v41007008"
+      },
+      {
+        ref: "Mark 7:21, 22",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/mark/7/#v41007021-v41007022"
       }
     ],
     correctScriptureRefs: [
@@ -1347,14 +1425,37 @@ const allQuestions = [
     question: "Which scriptures teach the following truth? " +
               "Genuine love identifies true religion.",
     scriptures: [
-      // TODO: Add incorrect scriptures
+      {
+        ref: "Micah 3:11",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/micah/3/#v33003011"
+      },
       {
         ref: "Micah 4:3",
         href: "https://www.jw.org/en/library/bible/study-bible/books/micah/4/#v33004003"
       },
       {
+        ref: "John 13:26, 27",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/john/13/#v43013026-v43013027"
+      },
+      {
         ref: "John 13:34, 35",
         href: "https://www.jw.org/en/library/bible/study-bible/books/john/13/#v43013034-v43013035"
+      },
+      {
+        ref: "2 Timothy 3:5",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/2-timothy/3/#v55003005"
+      },
+      {
+        ref: "2 Timothy 3:13",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/2-timothy/3/#v55003013"
+      },
+      {
+        ref: "Revelation 17:3-6",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/revelation/17/#v66017003-v66017006"
+      },
+      {
+        ref: "Revelation 17:16",
+        href: "https://www.jw.org/en/library/bible/study-bible/books/revelation/17/#v66017016"
       }
     ],
     correctScriptureRefs: [
@@ -1362,7 +1463,6 @@ const allQuestions = [
       "John 13:34, 35"
     ]
   }
-  */
 ];
 
 const defaultSettings = {
