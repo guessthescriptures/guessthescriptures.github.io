@@ -1,4 +1,4 @@
-const version = "v1.4.8";
+const version = "v1.5.0";
 
 const mainMenuElement = document.getElementById("main-menu");
 const languageSelect = document.getElementById("language");
@@ -6,6 +6,7 @@ const languageSelect = document.getElementById("language");
 const newGameElement = document.getElementById("new-game");
 const scoreElement = document.getElementById("score");
 const gameQuestionNumberElement = document.getElementById("game-question-number");
+const gameQuestionCategoryElement = document.getElementById("game-question-category");
 const gameQuestionElement = document.getElementById("game-question");
 const gameScriptureRefsElement = document.getElementById("game-scripture-refs");
 const gameResponseDialog = document.getElementById("game-response-dialog");
@@ -16,6 +17,7 @@ const restartButton = document.getElementById("restart");
 
 const reviewElement = document.getElementById("review");
 const reviewQuestionSelect = document.getElementById("review-question");
+const reviewQuestionCategoryElement = document.getElementById("review-question-category");
 const reviewQuestionTextElement = document.getElementById("review-question-text");
 const reviewScriptureRefsElement = document.getElementById("review-scripture-refs");
 const previousReviewQuestionButton = document.getElementById("previous-review-question");
@@ -216,6 +218,7 @@ function loadGameQuestion() {
     (currentGameQuestionIndex + 1).toString(),
     gameQuestions.length.toString()
   ]);
+  gameQuestionCategoryElement.textContent = currentGameQuestion.category;
   gameQuestionElement.textContent = currentGameQuestion.question;
 
   removeChildrenFromElement(gameScriptureRefsElement);
@@ -260,15 +263,29 @@ function loadReviewQuestion() {
   const currentReviewQuestion = reviewQuestions[currentReviewQuestionIndex];
 
   removeChildrenFromElement(reviewQuestionSelect);
+  let currentOptGroup = null;
   for (let i = 0; i < reviewQuestions.length; i++) {
+    const reviewQuestion = reviewQuestions[i];
     const option = document.createElement("option");
     const value = i.toString();
-    const optionText = document.createTextNode(reviewQuestions[i].question);
+    const optionText = document.createTextNode(reviewQuestion.question);
     option.appendChild(optionText);
     option.setAttribute("value", value);
-    reviewQuestionSelect.appendChild(option);
+    if (currentOptGroup === null || currentOptGroup.label !== reviewQuestion.category) {
+      if (currentOptGroup !== null) {
+        reviewQuestionSelect.appendChild(currentOptGroup);
+      }
+      currentOptGroup = document.createElement("optgroup");
+      currentOptGroup.label = reviewQuestion.category;
+    }
+    currentOptGroup.appendChild(option);
+    if (i == reviewQuestions.length - 1) {
+      reviewQuestionSelect.appendChild(currentOptGroup);
+    }
   }
   reviewQuestionSelect.value = currentReviewQuestionIndex;
+
+  reviewQuestionCategoryElement.textContent = currentReviewQuestion.category;
 
   reviewQuestionTextElement.textContent = currentReviewQuestion.question;
 
@@ -547,7 +564,16 @@ previousReviewQuestionButton.addEventListener("click", () => previousReviewQuest
 
 nextReviewQuestionButton.addEventListener("click", () => nextReviewQuestion());
 
+let currentAvailableQuestionCategory = null;
 allQuestions.forEach((question) => {
+  if (currentAvailableQuestionCategory === null || currentAvailableQuestionCategory !== question.category) {
+    const availableQuestionCategory = document.createElement("div");
+    availableQuestionCategory.classList.add("question-category");
+    availableQuestionCategory.textContent = question.category;
+    availableQuestionsElement.appendChild(availableQuestionCategory);
+    currentAvailableQuestionCategory = question.category;
+  }
+
   const availableQuestionCheckbox = document.createElement("input");
   availableQuestionCheckbox.classList.add("available-question-checkbox");
   availableQuestionCheckbox.type = "checkbox";

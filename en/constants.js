@@ -3,6 +3,7 @@ const allQuestions = [
   // The Future
   ///////////////////////////////////////////
   {
+    category: "The Future",
     question: "Which scriptures teach the following truth? " +
               "Current events and attitudes indicate a change is near.",
     scriptures: [
@@ -47,6 +48,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "The Future",
     question: "Which scriptures teach the following truth? " +
               "The earth will never be destroyed.",
     scriptures: [
@@ -89,6 +91,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "The Future",
     question: "Which scriptures teach the following truth? " +
               "The earth's environment will be restored.",
     scriptures: [
@@ -131,6 +134,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "The Future",
     question: "Which scriptures teach the following truth? " +
               "Everyone will have perfect health.",
     scriptures: [
@@ -173,6 +177,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "The Future",
     question: "Which scriptures teach the following truth? " +
               "You can live forever on earth.",
     scriptures: [
@@ -218,6 +223,7 @@ const allQuestions = [
   // Family
   ///////////////////////////////////////////
   {
+    category: "Family",
     question: "Which scriptures teach the following truth? " +
               "A husband should 'love his wife as he does himself.'",
     scriptures: [
@@ -260,6 +266,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Family",
     question: "Which scriptures teach the following truth? " +
               "A wife should deeply respect her husband.",
     scriptures: [
@@ -302,6 +309,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Family",
     question: "Which scriptures teach the following truth? " +
               "A husband and a wife should be loyal to each other.",
     scriptures: [
@@ -346,6 +354,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Family",
     question: "Which scriptures teach the following truth? " +
               "Children who respect and obey their parents will succeed.",
     scriptures: [
@@ -391,6 +400,7 @@ const allQuestions = [
   // God
   ///////////////////////////////////////////
   {
+    category: "God",
     question: "Which scriptures teach the following truth? " +
               "God has a name.",
     scriptures: [
@@ -425,6 +435,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "God",
     question: "Which scriptures teach the following truth? " +
               "God communicates with us.",
     scriptures: [
@@ -467,6 +478,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "God",
     question: "Which scriptures teach the following truth? " +
               "God is fair and unbiased.",
     scriptures: [
@@ -509,6 +521,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "God",
     question: "Which scriptures teach the following truth? " +
               "God wants to help us.",
     scriptures: [
@@ -554,6 +567,7 @@ const allQuestions = [
   // Prayer
   ///////////////////////////////////////////
   {
+    category: "Prayer",
     question: "Which scriptures teach the following truth? " +
               "God wants us to pray to him.",
     scriptures: [
@@ -597,6 +611,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Prayer",
     question: "Which scriptures teach the following truth? " +
               "The Bible teaches us how to pray.",
     scriptures: [
@@ -639,6 +654,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Prayer",
     question: "Which scriptures teach the following truth? " +
               "We should pray often.",
     scriptures: [
@@ -684,6 +700,7 @@ const allQuestions = [
   // Jesus
   ///////////////////////////////////////////
   {
+    category: "Jesus",
     question: "Which scriptures teach the following truth? " +
               "Jesus was a great teacher whose advice always works.",
     scriptures: [
@@ -727,6 +744,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Jesus",
     question: "Which scriptures teach the following truth? " +
               "Jesus foretold events we see today.",
     scriptures: [
@@ -771,6 +789,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Jesus",
     question: "Which scriptures teach the following truth? " +
               "Jesus is God's Son.",
     scriptures: [
@@ -814,6 +833,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Jesus",
     question: "Which scriptures teach the following truth? " +
               "Jesus is not God Almighty.",
     scriptures: [
@@ -859,6 +879,7 @@ const allQuestions = [
   // God's Kingdom
   ///////////////////////////////////////////
   {
+    category: "God's Kingdom",
     question: "Which scriptures teach the following truth? " +
               "God's Kingdom is a real government in heaven.",
     scriptures: [
@@ -903,6 +924,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "God's Kingdom",
     question: "Which scriptures teach the following truth? " +
               "God's Kingdom will replace human governments.",
     scriptures: [
@@ -945,6 +967,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "God's Kingdom",
     question: "Which scriptures teach the following truth? " +
               "God's Kingdom is the only solution to mankind's problems.",
     scriptures: [
@@ -991,6 +1014,7 @@ const allQuestions = [
   // Suffering
   ///////////////////////////////////////////
   {
+    category: "Suffering",
     question: "Which scriptures teach the following truth? " +
               "God does not cause our suffering.",
     scriptures: [
@@ -1033,6 +1057,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Suffering",
     question: "Which scriptures teach the following truth? " +
               "Satan rules this world.",
     scriptures: [
@@ -1075,6 +1100,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Suffering",
     question: "Which scriptures teach the following truth? " +
               "God cares about your suffering.",
     scriptures: [
@@ -1118,6 +1144,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Suffering",
     question: "Which scriptures teach the following truth? " +
               "God will soon end suffering.",
     scriptures: [
@@ -1163,6 +1190,7 @@ const allQuestions = [
   // Death
   ///////////////////////////////////////////
   {
+    category: "Death",
     question: "Which scriptures teach the following truth? " +
               "The dead are unconscious; they are not suffering.",
     scriptures: [
@@ -1205,6 +1233,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Death",
     question: "Which scriptures teach the following truth? " +
               "The dead cannot help us or harm us.",
     scriptures: [
@@ -1248,6 +1277,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Death",
     question: "Which scriptures teach the following truth? " +
               "Dead loved ones will be resurrected.",
     scriptures: [
@@ -1291,6 +1321,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Death",
     question: "Which scriptures teach the following truth? " +
               "\"Death will be no more.\"",
     scriptures: [
@@ -1336,6 +1367,7 @@ const allQuestions = [
   // Religion
   ///////////////////////////////////////////
   {
+    category: "Religion",
     question: "Which scriptures teach the following truth? " +
               "Not all religions please God.",
     scriptures: [
@@ -1379,6 +1411,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Religion",
     question: "Which scriptures teach the following truth? " +
               "God hates hypocrisy.",
     scriptures: [
@@ -1422,6 +1455,7 @@ const allQuestions = [
     ]
   },
   {
+    category: "Religion",
     question: "Which scriptures teach the following truth? " +
               "Genuine love identifies true religion.",
     scriptures: [

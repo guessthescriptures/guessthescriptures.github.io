@@ -183,7 +183,27 @@ select {
   padding: 10px;
 }
 
-.scripture-refs {
+.question-category {
+  box-sizing: border-box;
+  color: #292929;
+  direction: ltr;
+  font-family: NotoSans,Arial,"Arial Unicode MS",sans-serif;
+  font-size: 1.205em !important;
+  font-weight: 700;
+  line-break: strict;
+  line-height: 1.25;
+  margin-bottom: .25em;
+  margin-top: 1em;
+  text-decoration-color: #8e8e8e;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .4ex;
+  text-wrap: balance;
+  word-break: normal;
+}
+
+.game-scripture-refs {
   display: grid; /* Use grid layout */
   grid-template-columns: repeat(4, 1fr); /* Create 4 columns */
   grid-template-rows: repeat(2, 1fr); /* Create 2 rows */
@@ -212,6 +232,12 @@ select {
   padding: 0px;
   text-align: center;
   width: 85%;
+}
+
+.review-scripture-refs {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(4, 1fr); /* Create 4 columns */
+  grid-template-rows: repeat(1, 1fr); /* Create 1 row */
 }
 
 .review-scripture-ref {
@@ -256,7 +282,7 @@ select {
 .settings-buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
-  grid-template-rows: repeat(4, 1fr); /* Create 4 rows */
+  grid-template-rows: repeat(2, 1fr); /* Create 2 rows */
 }
 
 .correct {
@@ -275,8 +301,13 @@ select {
     min-width: 90%;
   }
 
-  .scripture-refs {
+  .game-scripture-refs {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
     grid-template-rows: repeat(4, 1fr); /* 4 rows on smaller screens */
+  }
+
+  .review-scripture-refs {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows on smaller screens */
   }
 }
