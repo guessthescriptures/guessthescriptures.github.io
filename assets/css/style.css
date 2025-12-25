@@ -194,11 +194,6 @@ select {
   line-height: 1.25;
   margin-bottom: .25em;
   margin-top: 1em;
-  text-decoration-color: #8e8e8e;
-  text-decoration-line: underline;
-  text-decoration-style: dotted;
-  text-decoration-thickness: 1px;
-  text-underline-offset: .4ex;
   text-wrap: balance;
   word-break: normal;
 }

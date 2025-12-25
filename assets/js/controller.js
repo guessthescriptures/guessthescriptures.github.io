@@ -1,4 +1,4 @@
-const version = "v1.5.0";
+const version = "v1.5.1";
 
 const mainMenuElement = document.getElementById("main-menu");
 const languageSelect = document.getElementById("language");
