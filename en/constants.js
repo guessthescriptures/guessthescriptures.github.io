@@ -1511,6 +1511,7 @@ const settingsLocalStorageItemKey = "guessthescriptures.en.settings";
 
 const scoreText = "Score: ${0}";
 const gameQuestionNumberText = "Question ${0} of ${1}";
+const gameQuestionCategoryText = "Category: ${0}";
 const gameResponse01aHtml = "You submitted <b>${0}</b> out of the <b>${1}</b> " +
                       "correct scriptures for this question.<br/>" +
                       "No point added to your score.";
@@ -1551,3 +1552,4 @@ const gameResponse03f01Html = "<br/><b>Goal:</b> Answer all the questions correc
                       "before answering any of the questions.";
 const gameResponse03f02Html = "<br/><b>Goal:</b> Add another question to be used in the next game. " +
                       "(See <a href=\"./#settings\"><b>Settings</b></a>)";
+const reviewQuestionCategoryText = "Category: ${0}";

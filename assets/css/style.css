@@ -136,6 +136,10 @@ select {
   text-align: left;
 }
 
+.width-95 {
+  width: 95%;
+}
+
 .element {
   align-items: center;
   display: flex;
@@ -183,21 +187,6 @@ select {
   padding: 10px;
 }
 
-.question-category {
-  box-sizing: border-box;
-  color: #292929;
-  direction: ltr;
-  font-family: NotoSans,Arial,"Arial Unicode MS",sans-serif;
-  font-size: 1.205em !important;
-  font-weight: 700;
-  line-break: strict;
-  line-height: 1.25;
-  margin-bottom: .25em;
-  margin-top: 1em;
-  text-wrap: balance;
-  word-break: normal;
-}
-
 .game-scripture-refs {
   display: grid; /* Use grid layout */
   grid-template-columns: repeat(4, 1fr); /* Create 4 columns */
@@ -241,6 +230,21 @@ select {
   margin: 5px;
   padding: 10px;
   text-align: center;
+}
+
+.available-question-category {
+  box-sizing: border-box;
+  color: #292929;
+  direction: ltr;
+  font-family: NotoSans,Arial,"Arial Unicode MS",sans-serif;
+  font-size: 1.205em !important;
+  font-weight: 700;
+  line-break: strict;
+  line-height: 1.25;
+  margin-bottom: .25em;
+  margin-top: 1em;
+  text-wrap: balance;
+  word-break: normal;
 }
 
 .available-questions {

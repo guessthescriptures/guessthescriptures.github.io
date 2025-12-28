@@ -1,4 +1,4 @@
-const version = "v1.5.1";
+const version = "v1.5.2";
 
 const mainMenuElement = document.getElementById("main-menu");
 const languageSelect = document.getElementById("language");
@@ -218,7 +218,9 @@ function loadGameQuestion() {
     (currentGameQuestionIndex + 1).toString(),
     gameQuestions.length.toString()
   ]);
-  gameQuestionCategoryElement.textContent = currentGameQuestion.category;
+  gameQuestionCategoryElement.textContent = interpolate(gameQuestionCategoryText, [
+    currentGameQuestion.category
+  ]);
   gameQuestionElement.textContent = currentGameQuestion.question;
 
   removeChildrenFromElement(gameScriptureRefsElement);
@@ -285,7 +287,9 @@ function loadReviewQuestion() {
   }
   reviewQuestionSelect.value = currentReviewQuestionIndex;
 
-  reviewQuestionCategoryElement.textContent = currentReviewQuestion.category;
+  reviewQuestionCategoryElement.textContent = interpolate(reviewQuestionCategoryText, [
+    currentReviewQuestion.category
+  ]);
 
   reviewQuestionTextElement.textContent = currentReviewQuestion.question;
 
@@ -568,7 +572,7 @@ let currentAvailableQuestionCategory = null;
 allQuestions.forEach((question) => {
   if (currentAvailableQuestionCategory === null || currentAvailableQuestionCategory !== question.category) {
     const availableQuestionCategory = document.createElement("div");
-    availableQuestionCategory.classList.add("question-category");
+    availableQuestionCategory.classList.add("available-question-category");
     availableQuestionCategory.textContent = question.category;
     availableQuestionsElement.appendChild(availableQuestionCategory);
     currentAvailableQuestionCategory = question.category;
