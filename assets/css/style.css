@@ -123,7 +123,7 @@ select {
 
 .position-center {
   left: 50%;
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
 }
@@ -140,7 +140,7 @@ select {
   width: 95%;
 }
 
-.element {
+.display-flex-column-center {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -276,12 +276,6 @@ select {
   padding: 0px;
   text-align: left;
   width: 95%;
-}
-
-.settings-buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
-  grid-template-rows: repeat(2, 1fr); /* Create 2 rows */
 }
 
 .correct {

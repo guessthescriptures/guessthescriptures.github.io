@@ -1,4 +1,4 @@
-const version = "v1.5.2";
+const version = "v1.6.0";
 
 const mainMenuElement = document.getElementById("main-menu");
 const languageSelect = document.getElementById("language");
@@ -9,11 +9,11 @@ const gameQuestionNumberElement = document.getElementById("game-question-number"
 const gameQuestionCategoryElement = document.getElementById("game-question-category");
 const gameQuestionElement = document.getElementById("game-question");
 const gameScriptureRefsElement = document.getElementById("game-scripture-refs");
-const gameResponseDialog = document.getElementById("game-response-dialog");
-const gameResponseDialogHideElement = document.getElementById("game-response-dialog-hide");
 const submitButton = document.getElementById("submit");
 const nextGameQuestionButton = document.getElementById("next-game-question");
 const restartButton = document.getElementById("restart");
+const gameResponseDialog = document.getElementById("game-response-dialog");
+const gameResponseDialogHideElement = document.getElementById("game-response-dialog-hide");
 
 const reviewElement = document.getElementById("review");
 const reviewQuestionSelect = document.getElementById("review-question");
@@ -26,8 +26,10 @@ const nextReviewQuestionButton = document.getElementById("next-review-question")
 const settingsElement = document.getElementById("settings");
 const availableQuestionsElement = document.getElementById("available-questions");
 const numQuestionsPerGameSelect = document.getElementById("num-questions-per-game");
-const saveSettingsButton = document.getElementById("save-settings");
-const resetSettingsButton = document.getElementById("reset-settings");
+const applyAndSaveButton = document.getElementById("apply-and-save");
+const resetToDefaultButton = document.getElementById("reset-to-default");
+const settingsButtonResponseDialog = document.getElementById("settings-button-response-dialog");
+const settingsButtonResponseDialogHideElement = document.getElementById("settings-button-response-dialog-hide");
 
 const howToPlayElement = document.getElementById("how-to-play");
 
@@ -44,6 +46,17 @@ let selectedGameScriptureRefs = [];
 let selectedGameScriptureRefsSubmitted = false;
 let gameScriptureRefClickedBeforeSubmission = false;
 
+function applyAndSaveSettings() {
+  if (editableSettings.availableQuestions.length === 0) {
+    displayDialog(settingsButtonResponseDialog, settingsButtonResponse01Html);
+    disableElement(settingsElement);
+    return;
+  }
+  setSettings(editableSettings);
+  displayDialog(settingsButtonResponseDialog, settingsButtonResponse02Html);
+  disableElement(settingsElement);
+}
+
 function displayDialog(dialog, content) {
   dialog.children[1].innerHTML = content;
   dialog.classList.remove("display-none");
@@ -55,8 +68,8 @@ function displayDialog(dialog, content) {
 
 function displayElement(element) {
   element.classList.remove("display-none");
-  if (!element.classList.contains("element")) {
-    element.classList.add("element");
+  if (!element.classList.contains("display-flex-column-center")) {
+    element.classList.add("display-flex-column-center");
   }
   enableElement(element);
 }
@@ -71,6 +84,7 @@ function displayElementByHash() {
     hideDialog(gameResponseDialog);
     hideElement(reviewElement);
     hideElement(settingsElement);
+    hideDialog(settingsButtonResponseDialog);
     hideElement(howToPlayElement);
     hideElement(aboutElement);
   } else if (location.hash === "#new-game") {
@@ -79,6 +93,7 @@ function displayElementByHash() {
     hideDialog(gameResponseDialog);
     hideElement(reviewElement);
     hideElement(settingsElement);
+    hideDialog(settingsButtonResponseDialog);
     hideElement(howToPlayElement);
     hideElement(aboutElement);
   } else if (location.hash === "#review") {
@@ -87,6 +102,7 @@ function displayElementByHash() {
     hideDialog(gameResponseDialog);
     displayReviewElement();
     hideElement(settingsElement);
+    hideDialog(settingsButtonResponseDialog);
     hideElement(howToPlayElement);
     hideElement(aboutElement);
   } else if (location.hash === "#settings") {
@@ -95,6 +111,7 @@ function displayElementByHash() {
     hideDialog(gameResponseDialog);
     hideElement(reviewElement);
     displayElement(settingsElement);
+    hideDialog(settingsButtonResponseDialog);
     hideElement(howToPlayElement);
     hideElement(aboutElement);
   } else if (location.hash === "#how-to-play") {
@@ -103,6 +120,7 @@ function displayElementByHash() {
     hideDialog(gameResponseDialog);
     hideElement(reviewElement);
     hideElement(settingsElement);
+    hideDialog(settingsButtonResponseDialog);
     displayElement(howToPlayElement);
     hideElement(aboutElement);
   } else if (location.hash === "#about") {
@@ -111,6 +129,7 @@ function displayElementByHash() {
     hideDialog(gameResponseDialog);
     hideElement(reviewElement);
     hideElement(settingsElement);
+    hideDialog(settingsButtonResponseDialog);
     hideElement(howToPlayElement);
     displayElement(aboutElement);
   }
@@ -155,7 +174,7 @@ function getReviewQuestions() {
 }
 
 function getSettings() {
-  const item = localStorage.getItem(settingsLocalStorageItemKey);
+  const item = localStorage.getItem(localStorageItemKeySettings);
   if (item !== null) {
     return JSON.parse(item);
   }
@@ -163,7 +182,7 @@ function getSettings() {
 }
 
 function hideElement(element) {
-  element.classList.remove("element");
+  element.classList.remove("display-flex-column-center");
   if (!element.classList.contains("display-none")) {
     element.classList.add("display-none");
   }
@@ -355,17 +374,15 @@ function removeChildrenFromElement(element) {
 }
 
 function removeSettings() {
-  localStorage.removeItem(settingsLocalStorageItemKey);
+  localStorage.removeItem(localStorageItemKeySettings);
 }
 
-function resetSettings() {
+function resetToDefaultSettings() {
   removeSettings();
   editableSettings = getSettings();
   updateSettingsElement();
-}
-
-function saveSettings() {
-  setSettings(editableSettings);
+  displayDialog(settingsButtonResponseDialog, settingsButtonResponse03Html);
+  disableElement(settingsElement);
 }
 
 function selectLanguage(languageSelect) {
@@ -383,7 +400,7 @@ function selectReviewQuestion(reviewQuestionSelect) {
 }
 
 function setSettings(settings) {
-  localStorage.setItem(settingsLocalStorageItemKey, JSON.stringify(settings));
+  localStorage.setItem(localStorageItemKeySettings, JSON.stringify(settings));
 }
 
 function shuffleArray(array) {
@@ -524,11 +541,6 @@ function updateSettingsElement() {
   const availableQuestionCheckboxes = document.querySelectorAll(".available-question-checkbox");
   availableQuestionCheckboxes.forEach((availableQuestionCheckbox) => {
     availableQuestionCheckbox.checked = editableSettings.availableQuestions.includes(availableQuestionCheckbox.value);
-    if (availableQuestionCheckbox.checked && editableSettings.availableQuestions.length === 1) {
-      availableQuestionCheckbox.classList.add("disabled");
-    } else {
-      availableQuestionCheckbox.classList.remove("disabled");
-    }
   });
   for (let i = numQuestionsPerGameSelect.options.length - 1; i >= editableSettings.availableQuestions.length; i--) {
     const option = numQuestionsPerGameSelect.options[i];
@@ -553,14 +565,14 @@ function updateSettingsElement() {
 
 languageSelect.addEventListener("change", () => selectLanguage(languageSelect));
 
+submitButton.addEventListener("click", () => submitSelectedGameScriptureRefs());
+nextGameQuestionButton.addEventListener("click", () => nextGameQuestion());
+restartButton.addEventListener("click", () => newGame());
+
 gameResponseDialogHideElement.addEventListener("click", () => {
   hideDialog(gameResponseDialog);
   enableElement(newGameElement);
 });
-
-submitButton.addEventListener("click", () => submitSelectedGameScriptureRefs());
-nextGameQuestionButton.addEventListener("click", () => nextGameQuestion());
-restartButton.addEventListener("click", () => newGame());
 
 reviewQuestionSelect.addEventListener("change", () => selectReviewQuestion(reviewQuestionSelect));
 
@@ -602,9 +614,14 @@ numQuestionsPerGameSelect.addEventListener("change", () =>
   selectNumQuestionsPerGame(numQuestionsPerGameSelect)
 );
 
-saveSettingsButton.addEventListener("click", () => saveSettings());
+applyAndSaveButton.addEventListener("click", () => applyAndSaveSettings());
 
-resetSettingsButton.addEventListener("click", () => resetSettings());
+resetToDefaultButton.addEventListener("click", () => resetToDefaultSettings());
+
+settingsButtonResponseDialogHideElement.addEventListener("click", () => {
+  hideDialog(settingsButtonResponseDialog);
+  enableElement(settingsElement);
+});
 
 versionElement.textContent = version;
 

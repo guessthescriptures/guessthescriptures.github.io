@@ -32,7 +32,7 @@
     <div id="game-question-category" class="margin-5px text-align-center width-95"></div>
     <div id="game-question" class="margin-5px text-align-center width-95"></div>
     <div id="game-scripture-refs" class="margin-5px game-scripture-refs"></div>
-    <div class="margin-5px element">
+    <div class="margin-5px display-flex-column-center">
         <button id="submit">Submit Selected Scriptures</button>
         <button id="next-game-question">Next Question</button>
         <button id="restart">Restart Game</button>
@@ -55,7 +55,7 @@
     <div id="review-question-category" class="margin-5px text-align-center width-95"></div>
     <div id="review-question-text" class="margin-5px text-align-center width-95"></div>
     <div id="review-scripture-refs" class="margin-5px review-scripture-refs"></div>
-    <div class="margin-5px element">
+    <div class="margin-5px display-flex-column-center">
         <button id="previous-review-question">Previous Question</button>
         <button id="next-review-question">Next Question</button>
     </div>
@@ -68,21 +68,23 @@
     <div id="available-questions" class="margin-5px available-questions"></div>
     <label class="margin-5px" for="num-questions-per-game">Number of Questions Per Game</label>
     <select id="num-questions-per-game" class="margin-5px"></select>
-    <div class="margin-5px settings-buttons">
+    <div class="margin-5px display-flex-column-center">
         <div class="text-align-center">
-            <button id="save-settings">Save Settings</button>
-        </div>
-        <div class="margin-5px text-align-left">
-            Saves the current settings to local storage.
+            <button id="apply-and-save">Apply and Save</button>
         </div>
         <div class="text-align-center">
-            <button id="reset-settings">Reset Settings</button>
-        </div>
-        <div class="margin-5px text-align-left">
-            Resets the current settings to the default settings.
+            <button id="reset-to-default">Reset to Default</button>
         </div>
     </div>
     <a href="#main-menu" class="margin-5px text-align-center width-95">Return to Main Menu</a>
+</div>
+
+<div id="settings-button-response-dialog" class="position-center display-none disabled">
+    <div class="dialog-title-bar">
+        <div class="dialog-title"><b>Results</b></div>
+        <div id="settings-button-response-dialog-hide" class="dialog-hide"><b>&#10005;</b></div>
+    </div>
+    <div class="dialog-content text-align-center"></div>
 </div>
 
 <div id="how-to-play" class="display-none disabled">
@@ -224,15 +226,15 @@
         <p>
             The following discusses each button.
         </p>
-        <h4>Save Settings</h4>
+        <h4>Apply and Save</h4>
         <p>
-            To save the current settings to local storage, select the button
-            labeled <b>Save Settings</b>.
+            To apply the settings and to save the settings to local storage,
+            select the button labeled <b>Apply and Save</b>.
         </p>
-        <h4>Reset Settings</h4>
+        <h4>Reset to Default</h4>
         <p>
-            To reset the current settings to the default settings, select the
-            button labeled <b>Reset Settings</b>.
+            To reset the settings to the default settings, select the button
+            labeled <b>Reset to Default</b>.
         </p>
         <p>
             To return to the main menu, select the link labeled

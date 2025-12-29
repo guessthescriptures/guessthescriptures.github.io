@@ -1507,7 +1507,7 @@ const defaultSettings = {
   numQuestionsPerGame: 1
 };
 
-const settingsLocalStorageItemKey = "guessthescriptures.en.settings";
+const localStorageItemKeySettings = "guessthescriptures.en.settings";
 
 const scoreText = "Score: ${0}";
 const gameQuestionNumberText = "Question ${0} of ${1}";
@@ -1553,3 +1553,7 @@ const gameResponse03f01Html = "<br/><b>Goal:</b> Answer all the questions correc
 const gameResponse03f02Html = "<br/><b>Goal:</b> Add another question to be used in the next game. " +
                       "(See <a href=\"./#settings\"><b>Settings</b></a>)";
 const reviewQuestionCategoryText = "Category: ${0}";
+const settingsButtonResponse01Html = "Settings cannot be applied and saved. " +
+                      "<br/>At least one question must be available.";
+const settingsButtonResponse02Html = "Settings applied and saved.";
+const settingsButtonResponse03Html = "Settings reset to default settings.";
