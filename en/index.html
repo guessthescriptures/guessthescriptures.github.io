@@ -33,9 +33,9 @@
     <div id="game-question" class="margin-5px text-align-center width-95"></div>
     <div id="game-scripture-refs" class="margin-5px game-scripture-refs"></div>
     <div class="margin-5px display-flex-column-center">
-        <button id="submit">Submit Selected Scriptures</button>
-        <button id="next-game-question">Next Question</button>
-        <button id="restart">Restart Game</button>
+        <button id="submit" class="margin-5px">Submit Selected Scriptures</button>
+        <button id="next-game-question" class="margin-5px">Next Question</button>
+        <button id="restart" class="margin-5px">Restart Game</button>
     </div>
     <a href="#main-menu" class="margin-5px text-align-center width-95">Return to Main Menu</a>
 </div>
@@ -56,8 +56,8 @@
     <div id="review-question-text" class="margin-5px text-align-center width-95"></div>
     <div id="review-scripture-refs" class="margin-5px review-scripture-refs"></div>
     <div class="margin-5px display-flex-column-center">
-        <button id="previous-review-question">Previous Question</button>
-        <button id="next-review-question">Next Question</button>
+        <button id="previous-review-question" class="margin-5px">Previous Question</button>
+        <button id="next-review-question" class="margin-5px">Next Question</button>
     </div>
     <a href="#main-menu" class="margin-5px text-align-center width-95">Return to Main Menu</a>
 </div>
@@ -66,15 +66,29 @@
     <h1>Settings</h1>
     <label class="margin-5px" for="available-questions">Available Questions</label>
     <div id="available-questions" class="margin-5px available-questions"></div>
-    <label class="margin-5px" for="num-questions-per-game">Number of Questions Per Game</label>
-    <select id="num-questions-per-game" class="margin-5px"></select>
+    <div class="margin-5px display-grid-2-x-3">
+        <div class="margin-5px text-align-left">
+            <label for="num-questions-per-game" class="margin-5px">Number of Questions Per Game</label>
+        </div>
+        <div class="margin-5px text-align-left">
+            <select id="num-questions-per-game" class="margin-5px"></select>
+        </div>
+        <div class="margin-5px text-align-left">
+            <label for="shuffle-questions" class="margin-5px">Shuffle Questions</label>
+        </div>
+        <div class="margin-5px text-align-left">
+            <input type="checkbox" id="shuffle-questions" class="margin-5px">
+        </div>
+        <div class="margin-5px text-align-left">
+            <label for="shuffle-scriptures" class="margin-5px">Shuffle Scriptures</label>
+        </div>
+        <div class="margin-5px text-align-left">
+            <input type="checkbox" id="shuffle-scriptures" class="margin-5px">
+        </div>
+    </div>
     <div class="margin-5px display-flex-column-center">
-        <div class="text-align-center">
-            <button id="apply-and-save">Apply and Save</button>
-        </div>
-        <div class="text-align-center">
-            <button id="reset-to-default">Reset to Default</button>
-        </div>
+        <button id="apply-and-save" class="margin-5px">Apply and Save</button>
+        <button id="reset-to-default" class="margin-5px">Reset to Default</button>
     </div>
     <a href="#main-menu" class="margin-5px text-align-center width-95">Return to Main Menu</a>
 </div>
@@ -102,12 +116,11 @@
             the main menu.
         </p>
         <p>
-            The game consists of a number of randomly selected questions. (By
-            default, it is only one question, but the available questions and
-            the number of questions per game can be adjusted in
-            <b>Settings</b>.) The game presents one question at a time. Each
-            question must be answered before the game can present the next
-            question. The questions are based from Appendix A
+            The game consists of a number of questions. (By default, it is
+            only one question, adjustments can be made in <b>Settings</b>.)
+            The game presents one question at a time. Each question must be
+            answered before the game can present the next question. The
+            questions are based from Appendix A
             <a href="https://www.jw.org/en/library/books/love-people-make-disciples/appendix-a/">
                 <i>Truths We Love to Teach</i>
             </a> from the brochure
@@ -211,16 +224,35 @@
             A column of boxes is presented each with a checkbox and a question
             associated with it. A checked checkbox indicates the associated
             question is available for the game and for review. An unchecked
-            checkbox indicates otherwise. You can check which question to be
-            available. However, at least one checkbox must remain checked.
+            checkbox indicates otherwise. You can select which questions are
+            to be available. However, at least one checkbox must remain
+            checked.
         </p>
         <h4>Number of Questions Per Game</h4>
         <p>
-            A selection box is presented with options each containing a number
-            of the questions from the available questions to be selected for
-            the game. The number of options increase or decrease based on the
-            number of available questions. You can select how many questions
-            from the available questions to be selected for the game.
+            A selection box is presented with options of how many of the
+            available questions are to be selected for the game. You can
+            select how many questions from the available questions are to be
+            selected for the game. If the selected option is a number less
+            than the total number of the available questions, then the
+            available questions of that number will be randomly selected for
+            the game. Adjusting this setting is for those who are familiar
+            with all the questions and only want a random few for a brief
+            game.
+        </p>
+        <h4>Shuffle Questions</h4>
+        <p>
+            A checkbox is presented indicating if the order of the available
+            questions selected for the game is to be presented in shuffled
+            order. This setting is to provide a challenge for those who are
+            familiar with all the questions.
+        </p>
+        <h4>Shuffle Scriptures</h4>
+        <p>
+            A checkbox is presented indicating if the order of the scriptures
+            for a question in the game is to be presented in shuffled order.
+            This setting is to provide a challenge for those who are familiar
+            with all the questions and their correct scriptures.
         </p>
         <h3>Buttons</h3>
         <p>

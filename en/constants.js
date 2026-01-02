@@ -1504,7 +1504,9 @@ const defaultSettings = {
     "Which scriptures teach the following truth? " +
     "Current events and attitudes indicate a change is near."
   ],
-  numQuestionsPerGame: 1
+  numQuestionsPerGame: 1,
+  shuffleQuestions: false,
+  shuffleScriptures: false
 };
 
 const localStorageItemKeySettings = "guessthescriptures.en.settings";
@@ -1551,6 +1553,12 @@ const gameResponse03f01Html = "<br/><b>Goal:</b> Answer all the questions correc
                       "without ever viewing the full text on any of the scriptures " +
                       "before answering any of the questions.";
 const gameResponse03f02Html = "<br/><b>Goal:</b> Add another question to be used in the next game. " +
+                      "(See <a href=\"./#settings\"><b>Settings</b></a>)";
+const gameResponse03f03Html = "<br/><b>Goal:</b> Have the questions presented in shuffled order in the next game. " +
+                      "(See <a href=\"./#settings\"><b>Settings</b></a>)";
+const gameResponse03f04Html = "<br/><b>Goal:</b> Have the scriptures presented in shuffled order in the next game. " +
+                      "(See <a href=\"./#settings\"><b>Settings</b></a>)";
+const gameResponse03f04Html = "<br/><b>Goal:</b> Adjust the number of questions per game to challenge yourself from time to time." +
                       "(See <a href=\"./#settings\"><b>Settings</b></a>)";
 const reviewQuestionCategoryText = "Category: ${0}";
 const settingsButtonResponse01Html = "Settings cannot be applied and saved. " +

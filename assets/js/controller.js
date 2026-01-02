@@ -1,4 +1,4 @@
-const version = "v1.6.0";
+const version = "v1.7.0";
 
 const mainMenuElement = document.getElementById("main-menu");
 const languageSelect = document.getElementById("language");
@@ -26,6 +26,8 @@ const nextReviewQuestionButton = document.getElementById("next-review-question")
 const settingsElement = document.getElementById("settings");
 const availableQuestionsElement = document.getElementById("available-questions");
 const numQuestionsPerGameSelect = document.getElementById("num-questions-per-game");
+const shuffleQuestionsCheckbox = document.getElementById("shuffle-questions");
+const shuffleScripturesCheckbox = document.getElementById("shuffle-scriptures");
 const applyAndSaveButton = document.getElementById("apply-and-save");
 const resetToDefaultButton = document.getElementById("reset-to-default");
 const settingsButtonResponseDialog = document.getElementById("settings-button-response-dialog");
@@ -161,11 +163,16 @@ function getAvailableQuestions() {
 
 function getGameQuestions() {
   const availableQuestions = JSON.parse(JSON.stringify(getAvailableQuestions()));
-  shuffleArray(availableQuestions);
-  const questions = availableQuestions.slice(0, getSettings().numQuestionsPerGame);
-  questions.forEach((question) => {
-    shuffleArray(question.scriptures);
-  });
+  const settings = getSettings();
+  const questions = pickRandomOrdered(availableQuestions, settings.numQuestionsPerGame);
+  if (settings.shuffleQuestions) {
+    shuffleArray(questions);
+  }
+  if (settings.shuffleScriptures) {
+    questions.forEach((question) => {
+      shuffleArray(question.scriptures);
+    });
+  }
   return questions;
 }
 
@@ -176,7 +183,14 @@ function getReviewQuestions() {
 function getSettings() {
   const item = localStorage.getItem(localStorageItemKeySettings);
   if (item !== null) {
-    return JSON.parse(item);
+    const obj = JSON.parse(item);
+    if (obj.shuffleQuestions === undefined) {
+      obj.shuffleQuestions = defaultSettings.shuffleQuestions;
+    }
+    if (obj.shuffleScriptures === undefined) {
+      obj.shuffleScriptures = defaultSettings.shuffleScriptures;
+    }
+    return obj;
   }
   return JSON.parse(JSON.stringify(defaultSettings));
 }
@@ -355,6 +369,30 @@ function nextReviewQuestion() {
   loadReviewQuestion();
 }
 
+function pickRandomOrdered(array, k) {
+  const len = array.length;
+  const kk = Math.floor(Number(k) || 0);
+
+  if (kk <= 0) { return []; }
+  if (kk >= len) { return array.slice(); }
+
+  // Reservoir of indices
+  const reservoir = [];
+  for (let i = 0; i < kk; i++) { reservoir.push(i); }
+
+  // For each index i >= kk, replace an element in the reservoir with probability kk/(i+1)
+  for (let i = kk; i < len; i++) {
+    const j = Math.floor(Math.random() * (i + 1)); // uniform in [0, i]
+    if (j < kk) {
+      reservoir[j] = i;
+    }
+  }
+
+  // Sort indices to preserve original order and map back to elements
+  reservoir.sort((a, b) => a - b);
+  return reservoir.map(i => array[i]);
+}
+
 function previousReviewQuestion() {
   currentReviewQuestionIndex--;
   loadReviewQuestion();
@@ -498,9 +536,14 @@ function submitSelectedGameScriptureRefs() {
       } else if (gameQuestions.length < allQuestions.length) {
         gameResponse += gameResponse03f02Html;
       } else if (gameQuestions.length === allQuestions.length) {
-        /*
-         * TODO: Something special should happen here.
-         */
+        const settings = getSettings();
+        if (!settings.shuffleQuestions) {
+          gameResponse += gameResponse03f03Html;
+        } else if (!settings.shuffleScriptures) {
+          gameResponse += gameResponse03f04Html;
+        } else if (settings.numQuestionsPerGame === allQuestions.length) {
+          gameResponse += gameResponse03f05Html;
+        }
       }
     }
 
@@ -533,6 +576,16 @@ function toggleGameScriptureRefCheckbox(gameScriptureRefCheckbox) {
   }
 }
 
+function toggleShuffleQuestionsCheckbox(shuffleQuestionsCheckbox) {
+  editableSettings.shuffleQuestions = shuffleQuestionsCheckbox.checked;
+  updateSettingsElement();
+}
+
+function toggleShuffleScripturesCheckbox(shuffleScripturesCheckbox) {
+  editableSettings.shuffleScriptures = shuffleScripturesCheckbox.checked;
+  updateSettingsElement();
+}
+
 function updateScoreElement() {
   scoreElement.textContent = interpolate(scoreText, [score.toString()]);
 }
@@ -561,6 +614,8 @@ function updateSettingsElement() {
     }
   }
   numQuestionsPerGameSelect.value = editableSettings.numQuestionsPerGame.toString();
+  shuffleQuestionsCheckbox.checked = editableSettings.shuffleQuestions;
+  shuffleScripturesCheckbox.checked = editableSettings.shuffleScriptures;
 }
 
 languageSelect.addEventListener("change", () => selectLanguage(languageSelect));
@@ -612,6 +667,14 @@ allQuestions.forEach((question) => {
 
 numQuestionsPerGameSelect.addEventListener("change", () => 
   selectNumQuestionsPerGame(numQuestionsPerGameSelect)
+);
+
+shuffleQuestionsCheckbox.addEventListener("click", () =>
+  toggleShuffleQuestionsCheckbox(shuffleQuestionsCheckbox) 
+);
+
+shuffleScripturesCheckbox.addEventListener("click", () =>
+  toggleShuffleScripturesCheckbox(shuffleScripturesCheckbox) 
 );
 
 applyAndSaveButton.addEventListener("click", () => applyAndSaveSettings());

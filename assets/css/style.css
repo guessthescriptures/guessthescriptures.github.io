@@ -147,6 +147,12 @@ select {
   text-align: center;
 }
 
+.display-grid-2-x-3 {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
+  grid-template-rows: repeat(3, 1fr); /* Create 3 rows */
+}
+
 .dialog {
   align-items: center;
   background-color: white;
