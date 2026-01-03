@@ -113,131 +113,6 @@ select {
   width: 150px;
 }
 
-.display-none {
-  display: none;
-}
-
-.margin-5px {
-  margin: 5px;
-}
-
-.position-center {
-  left: 50%;
-  position: fixed;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.text-align-center {
-  text-align: center;
-}
-
-.text-align-left {
-  text-align: left;
-}
-
-.width-95 {
-  width: 95%;
-}
-
-.display-flex-column-center {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.display-grid-2-x-3 {
-  display: grid; /* Use grid layout */
-  grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
-  grid-template-rows: repeat(3, 1fr); /* Create 3 rows */
-}
-
-.dialog {
-  align-items: center;
-  background-color: white;
-  border: 1px solid #ccc;
-  display: flex;
-  flex-direction: column;
-}
-
-.dialog-title-bar {
-  background-color: #757575;
-  display: flex;
-  flex-direction: row;
-  margin: 0px;
-  width: 100%;
-}
-
-.dialog-title {
-  background-color: #757575;
-  color: white;
-  font-style: bold;
-  margin: 0px;
-  padding: 10px;
-  text-align: left;
-  width: 95%;
-}
-
-.dialog-hide {
-  background-color: #5e5e5e;
-  color: white;
-  cursor: pointer;
-  margin: 0px;
-  padding: 10px;
-  text-align: right;
-}
-
-.dialog-content {
-  margin: 0px;
-  padding: 10px;
-}
-
-.game-scripture-refs {
-  display: grid; /* Use grid layout */
-  grid-template-columns: repeat(4, 1fr); /* Create 4 columns */
-  grid-template-rows: repeat(2, 1fr); /* Create 2 rows */
-}
-
-.game-scripture-ref-container {
-  background-color: white;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: row;
-  margin: 5px;
-  padding: 5px;
-}
-
-.game-scripture-ref-checkbox {
-  box-sizing: border-box;
-  color: inherit;
-  font: inherit;
-  line-height: normal;
-  margin: 5px;
-  padding: 0px;
-}
-
-.game-scripture-ref {
-  margin: 5px;
-  padding: 0px;
-  text-align: center;
-  width: 85%;
-}
-
-.review-scripture-refs {
-  display: grid; /* Use grid layout */
-  grid-template-columns: repeat(4, 1fr); /* Create 4 columns */
-  grid-template-rows: repeat(1, 1fr); /* Create 1 row */
-}
-
-.review-scripture-ref {
-  background-color: white;
-  border: 1px solid black;
-  margin: 5px;
-  padding: 10px;
-  text-align: center;
-}
-
 .available-question-category {
   box-sizing: border-box;
   color: #292929;
@@ -253,10 +128,18 @@ select {
   word-break: normal;
 }
 
-.available-questions {
-  align-items: stretch;
-  display: flex;
-  flex-direction: column;
+.available-question {
+  margin: 5px;
+  padding: 0px;
+  text-align: left;
+  width: 95%;
+}
+
+.available-question-checkbox {
+  box-sizing: border-box;
+  line-height: normal;
+  margin: 5px;
+  padding: 0px;
 }
 
 .available-question-container {
@@ -268,25 +151,50 @@ select {
   padding: 5px;
 }
 
-.available-question-checkbox {
-  box-sizing: border-box;
-  color: inherit;
-  font: inherit;
-  line-height: normal;
-  margin: 5px;
-  padding: 0px;
+.available-questions {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
 }
 
-.available-question {
-  margin: 5px;
-  padding: 0px;
+.dialog {
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-content {
+  margin: 0px;
+  padding: 10px;
+}
+
+.dialog-hide {
+  background-color: #5e5e5e;
+  color: white;
+  cursor: pointer;
+  margin: 0px;
+  padding: 10px;
+  text-align: right;
+}
+
+.dialog-title {
+  background-color: #757575;
+  color: white;
+  font-style: bold;
+  margin: 0px;
+  padding: 10px;
   text-align: left;
   width: 95%;
 }
 
-.correct {
-  background-color: green;
-  color: white;
+.dialog-title-bar {
+  background-color: #757575;
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  width: 100%;
 }
 
 .disabled {
@@ -294,15 +202,115 @@ select {
   pointer-events: none; /* Prevent clicks */
 }
 
+.display-flex-column-center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.display-grid-2-x-3 {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
+  grid-template-rows: repeat(3, 1fr); /* Create 3 rows */
+}
+
+.display-none {
+  display: none;
+}
+
+.game-scripture-ref {
+  margin: 5px;
+  padding: 0px;
+  text-align: center;
+  width: 85%;
+}
+
+.game-scripture-ref-checkbox {
+  box-sizing: border-box;
+  line-height: normal;
+  margin: 5px;
+  padding: 0px;
+}
+
+.game-scripture-ref-container {
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  padding: 5px;
+}
+
+.game-scripture-refs {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(4, 1fr); /* Create 4 columns */
+  grid-template-rows: repeat(2, 1fr); /* Create 2 rows */
+}
+
+.margin-5px {
+  margin: 5px;
+}
+
+.position-center {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.revealed-correct-game-scripture-ref-container {
+  background-color: green;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  padding: 5px;
+}
+
+.revealed-correct-game-scripture-ref-link {
+  color: white;
+}
+
+.review-scripture-ref {
+  background-color: green;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.review-scripture-ref-link {
+  color: white;
+}
+
+.review-scripture-refs {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(4, 1fr); /* Create 4 columns */
+  grid-template-rows: repeat(1, 1fr); /* Create 1 row */
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.width-95 {
+  width: 95%;
+}
+
 /* Media query for mobile devices */
 @media (max-width: 600px) {
-  .position-center {
-    min-width: 90%;
-  }
-
   .game-scripture-refs {
     grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
     grid-template-rows: repeat(4, 1fr); /* 4 rows on smaller screens */
+  }
+
+  .position-center {
+    min-width: 90%;
   }
 
   .review-scripture-refs {

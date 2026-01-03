@@ -1,4 +1,4 @@
-const version = "v1.7.0";
+const version = "v1.7.1";
 
 const mainMenuElement = document.getElementById("main-menu");
 const languageSelect = document.getElementById("language");
@@ -331,10 +331,9 @@ function loadReviewQuestion() {
     if (currentReviewQuestion.correctScriptureRefs.includes(scripture.ref)) {
       const reviewScriptureRefElement = document.createElement("div");
       reviewScriptureRefElement.classList.add("review-scripture-ref");
-      reviewScriptureRefElement.classList.add("correct");
 
       const aElement = document.createElement("a");
-      aElement.classList.add("correct");
+      aElement.classList.add("review-scripture-ref-link");
       aElement.href = scripture.href;
       aElement.textContent = scripture.ref;
       reviewScriptureRefElement.appendChild(aElement);
@@ -465,10 +464,9 @@ function submitSelectedGameScriptureRefs() {
     const isSelected = selectedGameScriptureRefs.includes(gameScriptureRef);
 
     if (isCorrect) {
-      gameScriptureRefContainerElement.classList.add("correct");
-      gameScriptureRefCheckbox.classList.add("correct");
-      gameScriptureRefElement.classList.add("correct");
-      gameScriptureRefLink.classList.add("correct");
+      gameScriptureRefContainerElement.classList.remove("game-scripture-ref-container");
+      gameScriptureRefContainerElement.classList.add("revealed-correct-game-scripture-ref-container");
+      gameScriptureRefLink.classList.add("revealed-correct-game-scripture-ref-link");
       if (isSelected) {
         correctCount++;
       }
