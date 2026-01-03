@@ -113,6 +113,13 @@ select {
   width: 150px;
 }
 
+.available-question {
+  margin: 5px;
+  padding: 0px;
+  text-align: left;
+  width: 95%;
+}
+
 .available-question-category {
   box-sizing: border-box;
   color: #292929;
@@ -126,13 +133,6 @@ select {
   margin-top: 1em;
   text-wrap: balance;
   word-break: normal;
-}
-
-.available-question {
-  margin: 5px;
-  padding: 0px;
-  text-align: left;
-  width: 95%;
 }
 
 .available-question-checkbox {

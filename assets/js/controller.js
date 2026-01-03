@@ -1,4 +1,4 @@
-const version = "v1.7.1";
+const version = "v1.7.2";
 
 const mainMenuElement = document.getElementById("main-menu");
 const languageSelect = document.getElementById("language");
@@ -57,6 +57,12 @@ function applyAndSaveSettings() {
   setSettings(editableSettings);
   displayDialog(settingsButtonResponseDialog, settingsButtonResponse02Html);
   disableElement(settingsElement);
+}
+
+function disableElement(element) {
+  if (!element.classList.contains("disabled")) {
+    element.classList.add("disabled");
+  }
 }
 
 function displayDialog(dialog, content) {
@@ -145,12 +151,6 @@ function displayNewGameElement() {
 function displayReviewElement() {
   review();
   displayElement(reviewElement);
-}
-
-function disableElement(element) {
-  if (!element.classList.contains("disabled")) {
-    element.classList.add("disabled");
-  }
 }
 
 function enableElement(element) {
@@ -370,19 +370,18 @@ function nextReviewQuestion() {
 
 function pickRandomOrdered(array, k) {
   const len = array.length;
-  const kk = Math.floor(Number(k) || 0);
 
-  if (kk <= 0) { return []; }
-  if (kk >= len) { return array.slice(); }
+  if (k <= 0) { return []; }
+  if (k >= len) { return array.slice(); }
 
   // Reservoir of indices
   const reservoir = [];
-  for (let i = 0; i < kk; i++) { reservoir.push(i); }
+  for (let i = 0; i < k; i++) { reservoir.push(i); }
 
-  // For each index i >= kk, replace an element in the reservoir with probability kk/(i+1)
-  for (let i = kk; i < len; i++) {
+  // For each index i >= k, replace an element in the reservoir with probability k/(i+1)
+  for (let i = k; i < len; i++) {
     const j = Math.floor(Math.random() * (i + 1)); // uniform in [0, i]
-    if (j < kk) {
+    if (j < k) {
       reservoir[j] = i;
     }
   }
@@ -394,12 +393,6 @@ function pickRandomOrdered(array, k) {
 
 function previousReviewQuestion() {
   currentReviewQuestionIndex--;
-  loadReviewQuestion();
-}
-
-function review() {
-  reviewQuestions = getReviewQuestions();
-  currentReviewQuestionIndex = 0;
   loadReviewQuestion();
 }
 
@@ -420,6 +413,12 @@ function resetToDefaultSettings() {
   updateSettingsElement();
   displayDialog(settingsButtonResponseDialog, settingsButtonResponse03Html);
   disableElement(settingsElement);
+}
+
+function review() {
+  reviewQuestions = getReviewQuestions();
+  currentReviewQuestionIndex = 0;
+  loadReviewQuestion();
 }
 
 function selectLanguage(languageSelect) {
@@ -630,7 +629,6 @@ gameResponseDialogHideElement.addEventListener("click", () => {
 reviewQuestionSelect.addEventListener("change", () => selectReviewQuestion(reviewQuestionSelect));
 
 previousReviewQuestionButton.addEventListener("click", () => previousReviewQuestion());
-
 nextReviewQuestionButton.addEventListener("click", () => nextReviewQuestion());
 
 let currentAvailableQuestionCategory = null;
@@ -676,7 +674,6 @@ shuffleScripturesCheckbox.addEventListener("click", () =>
 );
 
 applyAndSaveButton.addEventListener("click", () => applyAndSaveSettings());
-
 resetToDefaultButton.addEventListener("click", () => resetToDefaultSettings());
 
 settingsButtonResponseDialogHideElement.addEventListener("click", () => {
